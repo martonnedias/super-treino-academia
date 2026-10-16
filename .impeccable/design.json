@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T05:32:34.968138Z",
+  "title": "Design System: Super Treino Academia",
+  "extensions": {
+    "colorMeta": {
+      "royal-blue": {
+        "role": "primary",
+        "displayName": "Royal Blue",
+        "canonical": "#1E3FA8",
+        "tonalRamp": [
+          "#0A163A",
+          "#102259",
+          "#152D79",
+          "#1B3998",
+          "#3B58B3",
+          "#7589CA",
+          "#AFBAE0",
+          "#E8ECF6"
+        ]
+      },
+      "golden-yellow": {
+        "role": "primary",
+        "displayName": "Golden Yellow",
+        "canonical": "#FFC400",
+        "tonalRamp": [
+          "#594400",
+          "#886900",
+          "#B88D00",
+          "#E7B200",
+          "#FFCC21",
+          "#FFDB62",
+          "#FFEAA4",
+          "#FFF9E6"
+        ]
+      },
+      "party-orange": {
+        "role": "secondary",
+        "displayName": "Party Orange",
+        "canonical": "#FF7A1A",
+        "tonalRamp": [
+          "#592A09",
+          "#88410E",
+          "#B85813",
+          "#E76F18",
+          "#FF8B37",
+          "#FFAD72",
+          "#FFD0AD",
+          "#FFF2E8"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0B0B0F",
+        "tonalRamp": [
+          "#030305",
+          "#050508",
+          "#08080B",
+          "#0A0A0E",
+          "#2A2A2E",
+          "#69696C",
+          "#A8A8A9",
+          "#E7E7E7"
+        ]
+      },
+      "night-soft": {
+        "role": "neutral",
+        "displayName": "Night Soft",
+        "canonical": "#15151D",
+        "tonalRamp": [
+          "#07070A",
+          "#0B0B0F",
+          "#0F0F15",
+          "#13131A",
+          "#33333A",
+          "#6F6F74",
+          "#ABABAE",
+          "#E8E8E8"
+        ]
+      },
+      "night-mute": {
+        "role": "neutral",
+        "displayName": "Night Mute",
+        "canonical": "#B7BCCC",
+        "tonalRamp": [
+          "#404147",
+          "#62646D",
+          "#848793",
+          "#A6AAB9",
+          "#C0C5D3",
+          "#D3D6E0",
+          "#E5E7ED",
+          "#F8F8FA"
+        ]
+      },
+      "contrast-black": {
+        "role": "neutral",
+        "displayName": "Contrast Black",
+        "canonical": "#050507",
+        "tonalRamp": [
+          "#010102",
+          "#020203",
+          "#030305",
+          "#040406",
+          "#252527",
+          "#656567",
+          "#A6A6A6",
+          "#E6E6E6"
+        ]
+      },
+      "contrast-soft": {
+        "role": "neutral",
+        "displayName": "Contrast Soft",
+        "canonical": "#121216",
+        "tonalRamp": [
+          "#060607",
+          "#09090B",
+          "#0D0D10",
+          "#101014",
+          "#303034",
+          "#6D6D70",
+          "#AAAAAC",
+          "#E7E7E8"
+        ]
+      },
+      "contrast-mute": {
+        "role": "neutral",
+        "displayName": "Contrast Mute",
+        "canonical": "#A3A6B4",
+        "tonalRamp": [
+          "#393A3E",
+          "#575960",
+          "#767881",
+          "#9497A3",
+          "#AFB1BE",
+          "#C6C8D1",
+          "#DEDFE4",
+          "#F6F6F8"
+        ]
+      },
+      "slate-text": {
+        "role": "neutral",
+        "displayName": "Slate Text",
+        "canonical": "#464C63",
+        "tonalRamp": [
+          "#181A22",
+          "#252835",
+          "#323747",
+          "#3F455A",
+          "#5E6377",
+          "#8D919F",
+          "#BDBFC7",
+          "#ECEDEF"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "#595959",
+          "#888888",
+          "#B8B8B8",
+          "#E7E7E7",
+          "#FFFFFF",
+          "#FFFFFF",
+          "#FFFFFF",
+          "#FFFFFF"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "a-display": {
+        "displayName": "A Display",
+        "purpose": "Big Shoulders Display 900 uppercase; world A headlines."
+      },
+      "a-body": {
+        "displayName": "A Body",
+        "purpose": "Figtree."
+      },
+      "c-display": {
+        "displayName": "C Display",
+        "purpose": "Archivo 62% width 900; world C headlines."
+      },
+      "c-body": {
+        "displayName": "C Body",
+        "purpose": "Albert Sans."
+      },
+      "d-display": {
+        "displayName": "D Display",
+        "purpose": "Teko 600; world D headlines."
+      },
+      "d-body": {
+        "displayName": "D Body",
+        "purpose": "Manrope."
+      },
+      "a-button": {
+        "displayName": "A Button label",
+        "purpose": "Display face in buttons."
+      }
+    },
+    "shadows": [
+      {
+        "name": "a-ticket",
+        "value": "drop-shadow(0 24px 24px rgba(4,10,48,.38))",
+        "purpose": "World A ticket stack."
+      },
+      {
+        "name": "a-print",
+        "value": "0 30px 60px rgba(4,10,48,.4)",
+        "purpose": "World A white photo prints."
+      },
+      {
+        "name": "a-button-hover",
+        "value": "0 12px 22px rgba(11,11,15,.24)",
+        "purpose": "World A button lift."
+      },
+      {
+        "name": "c-peek",
+        "value": "0 30px 60px rgba(0,0,0,.45)",
+        "purpose": "World C hover peek photo."
+      },
+      {
+        "name": "fab",
+        "value": "0 16px 34px rgba(0,0,0,.38), 0 2px 6px rgba(0,0,0,.28)",
+        "purpose": "Floating WhatsApp button."
+      },
+      {
+        "name": "fab-menu",
+        "value": "0 26px 56px rgba(0,0,0,.45)",
+        "purpose": "Floating WhatsApp menu."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-expo-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Every reveal, hover and lift."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity + translate 32px, 0.9-1s, 80ms stagger",
+        "purpose": "Scroll reveals (.fx-r)."
+      },
+      {
+        "name": "mask-headline",
+        "value": "translate 118% to 0, 1s, 55ms per word",
+        "purpose": "Masked word-by-word headlines."
+      },
+      {
+        "name": "a-tilt",
+        "value": "perspective(900px) rotateY(+-4.5deg) rotateX(+-3.5deg) translateY(-4px)",
+        "purpose": "World A ticket tilt, fine pointer only."
+      },
+      {
+        "name": "a-confetti",
+        "value": "canvas burst: yellow, orange, blue, white",
+        "purpose": "World A WhatsApp tap."
+      },
+      {
+        "name": "c-lantern",
+        "value": "radial-gradient(440px, rgba(255,196,0,.18))",
+        "purpose": "World C hero and cards, fine pointer only."
+      },
+      {
+        "name": "c-magnet",
+        "value": "translate up to 10px x 8px",
+        "purpose": "World C yellow and dark buttons."
+      },
+      {
+        "name": "d-ring",
+        "value": "36px yellow ring, 1.9x over links",
+        "purpose": "World D cursor."
+      },
+      {
+        "name": "d-color",
+        "value": "grayscale(1) contrast(1.12) to none at 60% visibility or hover",
+        "purpose": "World D photos."
+      },
+      {
+        "name": "count-up",
+        "value": "[data-count] numerals",
+        "purpose": "Stats and rating."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce)",
+        "purpose": "Disables all of the above; script exits early."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "a-mobile",
+        "value": "879px (container)"
+      },
+      {
+        "name": "a-wide",
+        "value": "900px (container)"
+      },
+      {
+        "name": "c-mobile",
+        "value": "999px (container)"
+      },
+      {
+        "name": "d-mobile",
+        "value": "899px (container)"
+      },
+      {
+        "name": "fab",
+        "value": "880px (viewport)"
+      },
+      {
+        "name": "small-phone",
+        "value": "479px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "A Ticket Button",
+      "kind": "button",
+      "refersTo": "a-button-primary",
+      "description": "World A primary: yellow, 12px radius, lifts on hover.",
+      "html": "<a class=\"ds-a-btn\" href=\"#\">Chamar no WhatsApp</a>",
+      "css": ".ds-a-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:12px;background:#FFC400;color:#0B0B0F;font:800 22px 'Big Shoulders Display','Arial Narrow',sans-serif;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s}.ds-a-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(11,11,15,.24)}.ds-a-btn:active{transform:translateY(1px)}.ds-a-btn:focus-visible{outline:3px solid #FFC400;outline-offset:3px}"
+    },
+    {
+      "name": "A Ticket Row",
+      "kind": "card",
+      "refersTo": "a-ticket",
+      "description": "Yellow notched ticket with dashed divider and unit row.",
+      "html": "<div class=\"ds-a-tk\"><b>Itararé</b><span>Entrada · 1 pessoa</span></div>",
+      "css": ".ds-a-tk{display:grid;gap:6px;background:#FFC400;color:#0B0B0F;border-radius:22px;padding:26px 24px;font-family:'Big Shoulders Display',sans-serif;border-bottom:2px dashed rgba(11,11,15,.4);filter:drop-shadow(0 24px 24px rgba(4,10,48,.38))}.ds-a-tk b{font-size:40px;font-weight:900;text-transform:uppercase;line-height:.98}.ds-a-tk span{font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}"
+    },
+    {
+      "name": "A Class Pill",
+      "kind": "chip",
+      "refersTo": "a-pill",
+      "description": "Outlined uppercase pill coloured per class.",
+      "html": "<span class=\"ds-a-pill\">Dança</span>",
+      "css": ".ds-a-pill{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:999px;border:2px solid currentColor;color:#FFC400;background:#0B0B0F;font:800 22px 'Big Shoulders Display',sans-serif;letter-spacing:.04em;text-transform:uppercase}"
+    },
+    {
+      "name": "C Night Button",
+      "kind": "button",
+      "refersTo": "c-button-primary",
+      "description": "World C primary: square-ish 6px yellow, goes white on hover.",
+      "html": "<a class=\"ds-c-btn\" href=\"#\">Chamar no WhatsApp</a>",
+      "css": ".ds-c-btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 28px;border-radius:6px;background:#FFC400;color:#0B0B0F;font:800 19px 'Archivo','Arial Narrow',sans-serif;font-stretch:75%;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background-color .25s}.ds-c-btn:hover{background:#fff}.ds-c-btn:focus-visible{outline:3px solid #FFC400;outline-offset:3px}"
+    },
+    {
+      "name": "C Unit Cell",
+      "kind": "nav",
+      "refersTo": "c-unit-cell-hover",
+      "description": "Hairline cell that fills yellow on hover.",
+      "html": "<a class=\"ds-c-cell\" href=\"#\"><b>Renascença II</b><span>Abrir</span></a>",
+      "css": ".ds-c-cell{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:22px 24px;background:#0B0B0F;color:#fff;border-top:1px solid rgba(255,255,255,.18);text-decoration:none;font:800 24px 'Archivo',sans-serif;transition:background-color .35s cubic-bezier(.16,1,.3,1),color .35s}.ds-c-cell:hover{background:#FFC400;color:#0B0B0F}.ds-c-cell:focus-visible{outline:3px solid #FFC400;outline-offset:3px}"
+    },
+    {
+      "name": "D Pill Button",
+      "kind": "button",
+      "refersTo": "d-button-primary",
+      "description": "World D primary: flat yellow pill.",
+      "html": "<a class=\"ds-d-btn\" href=\"#\">Chamar no WhatsApp</a>",
+      "css": ".ds-d-btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:999px;background:#FFC400;color:#050507;font:800 14px 'Manrope',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background-color .25s,transform .3s}.ds-d-btn:hover{background:#fff}.ds-d-btn:active{transform:translateY(1px)}.ds-d-btn:focus-visible{outline:2px solid #FFC400;outline-offset:3px}"
+    },
+    {
+      "name": "D Outline Button",
+      "kind": "button",
+      "refersTo": "d-button-outline-hover",
+      "description": "Yellow outline pill that fills on hover.",
+      "html": "<a class=\"ds-d-btno\" href=\"#\">Ver unidade</a>",
+      "css": ".ds-d-btno{display:inline-flex;align-items:center;min-height:54px;padding:0 26px;border-radius:999px;border:1.5px solid #FFC400;background:transparent;color:#fff;font:800 14px 'Manrope',sans-serif;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background-color .25s,color .25s}.ds-d-btno:hover{background:#FFC400;color:#050507}.ds-d-btno:focus-visible{outline:2px solid #FFC400;outline-offset:3px}"
+    },
+    {
+      "name": "D Row",
+      "kind": "card",
+      "refersTo": "d-row-hover",
+      "description": "Hairline list row that lifts to Contrast Soft.",
+      "html": "<div class=\"ds-d-row\"><b>Itararé</b><span>Seg a sáb</span></div>",
+      "css": ".ds-d-row{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:26px 20px;border-top:1px solid rgba(255,255,255,.14);background:#050507;color:#fff;font:600 34px/.92 'Teko',sans-serif;text-transform:uppercase;transition:background-color .3s}.ds-d-row span{font:600 14px 'Manrope',sans-serif;color:#A3A6B4}.ds-d-row:hover{background:#121216}"
+    },
+    {
+      "name": "Floating WhatsApp Button",
+      "kind": "custom",
+      "refersTo": "c-button-primary",
+      "description": "Desktop-only pill that opens a three-unit menu (shown in world C colours).",
+      "html": "<a class=\"ds-wa\" href=\"#\">WhatsApp</a>",
+      "css": ".ds-wa{display:inline-flex;align-items:center;min-height:58px;padding:0 24px 0 18px;border-radius:999px;background:#FFC400;color:#0B0B0F;font:800 16px/1 'Archivo',sans-serif;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;box-shadow:0 16px 34px rgba(0,0,0,.38),0 2px 6px rgba(0,0,0,.28);transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-wa:hover{transform:translateY(-3px)}.ds-wa:focus-visible{outline:3px solid #fff;outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "One Brand, Three Rooms",
+    "overview": "The site ships three pinned layouts of the same gym: A Ingresso de festa (blue, yellow tickets, grain), C Noite (near-black, full-bleed photos, lantern), D Contraste (black, grayscale photos that gain colour). Shared: logo mark, blue and yellow, condensed uppercase headlines, direct local voice, and one job per screen: choose a unit and tap WhatsApp. Each world owns one signature interaction, all gated by prefers-reduced-motion.",
+    "keyCharacteristics": [
+      "Shared yellow #FFC400 as the action colour in all three worlds",
+      "Condensed uppercase display faces, calm sans for body",
+      "Container-query layout with mobile menu and sticky action bar",
+      "Depth only from soft tinted shadows and photography",
+      "Unconfirmed data shown as solid yellow chips"
+    ],
+    "rules": [
+      {
+        "name": "The Yellow Is Action Rule",
+        "body": "Yellow marks what you can tap or what is in focus. It is never wallpaper, except A's ticket stock, which is the object being tapped.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pinned Palette Rule",
+        "body": "Hex values come from src/data/site.mjs (A) and the layout CSS (C, D). Do not mint new brand hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The Own Face Rule",
+        "body": "Display and body faces never cross worlds.",
+        "section": "typography"
+      },
+      {
+        "name": "The Numerals Rule",
+        "body": "Counters and serials use tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Shadow Rule",
+        "body": "Shadows are diffuse and tinted to the ground. No hard offset shadows.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the logo lockup, yellow action colour and uppercase condensed headlines identical across worlds.",
+      "Do give every world its own faces, radius family and one signature interaction, as built.",
+      "Do keep 3px (D 2px) yellow focus outlines and 44px minimum targets.",
+      "Do mark unconfirmed facts with the yellow .ph chip.",
+      "Do gate every new animation on prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't use blue as a surface in C or D, or mix a world's type pairing into another.",
+      "Don't add hard offset shadows or new brand hues.",
+      "Don't invent contact data, prices, ratings or testimonials; unknown stays marked.",
+      "Don't make the effects layer carry information; every effect is decoration over a working static page."
+    ]
+  }
+}
