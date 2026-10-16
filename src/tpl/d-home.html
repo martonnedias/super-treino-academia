@@ -48,9 +48,8 @@
   </div>
   <div class="wrap" style="position:relative;padding-bottom:clamp(48px,6cqw,72px)">
     <div style="display:flex;flex-wrap:wrap;gap:24px 56px;align-items:center;padding-top:28px;border-top:1px solid var(--line)">
-      <div class="stat"><b>3</b><span>Unidades em Teresina</span></div>
       <div class="stat"><b class="y">4,7</b><span>Nota no Google</span></div>
-      <div class="stat"><b>22h</b><span>Aberta até as 22:00</span></div>
+      <div class="stat"><b>22h</b><span>Até as 22:00 nos dias úteis</span></div>
       <a class="glass" href="#unidades" style="display:flex;gap:14px;align-items:center;padding:14px 20px;text-decoration:none">
         <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6L3 21z"/></svg>
         <span class="stat"><b style="font-size:34px">Aula experimental</b><span>Agende pelo WhatsApp</span></span>
@@ -59,29 +58,25 @@
   </div>
 </section>
 
-<!-- ============ MODALIDADES ============ -->
-<section class="sec" style="background:#050507">
+<!-- ============ UNIDADES ============ -->
+<section id="unidades" class="sec" style="background:#050507;border-top:1px solid var(--line)">
   <div class="wrap">
-    <div style="text-align:center;display:grid;gap:16px;justify-items:center">
-      <h2 class="tk h2">Treine do seu jeito</h2>
-      <p style="max-width:40em;color:var(--mute)">Do primeiro dia ao treino pesado. Escolha a modalidade que combina com você, ou junte as três.</p>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <h2 class="tk h2">Escolha sua unidade</h2>
+      <p style="color:var(--mute);max-width:24em">Toque em agendar: o WhatsApp da unidade abre com a mensagem pronta.</p>
     </div>
-    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))">
-      <div class="mod">
-        <svg width="56" height="56" viewBox="0 0 40 24" aria-hidden="true"><g fill="var(--yellow)"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
-        <h3 class="tk" style="font-size:38px">Musculação</h3>
-        <p style="color:var(--mute);max-width:24em">Salas amplas e aparelho de sobra para treinar o corpo todo.</p>
-      </div>
-      <div class="mod">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7a3 3 0 1 1 6 0"/><path d="M7.5 9h9l1.5 9a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3z"/></svg>
-        <h3 class="tk" style="font-size:38px">Funcional</h3>
-        <p style="color:var(--mute);max-width:24em">Treino em turma, dinâmico, para ganhar fôlego e disposição.</p>
-      </div>
-      <div class="mod">
-        <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
-        <h3 class="tk" style="font-size:38px">Dança</h3>
-        <p style="color:var(--mute);max-width:24em">Energia &amp; Diversão: música alta, turma animada e confete.</p>
-      </div>
+    <div style="margin-top:40px;border-bottom:1px solid var(--line)">
+      <sc-for list="{{units}}" as="u">
+        <article class="row">
+          <h3 class="tk y" style="font-size:clamp(52px,4.6cqw,64px);line-height:.88">{{u.name}}</h3>
+          <p style="color:#D7D9E2">{{u.addr}}<br><span style="color:var(--mute);font-size:14px">Até as 22:00 nos dias úteis · <a href="{{u.href}}" style="color:#fff;font-weight:700;padding:6px 0">Horários e grade</a></span></p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+            <a class="btn btn-y btn-sm" href="{{u.wa}}" target="_blank" rel="noopener">Agendar</a>
+            <a class="btn btn-o btn-sm" href="{{u.map}}" target="_blank" rel="noopener" aria-label="Como chegar na unidade {{u.name}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mapa</a>
+            <a class="btn btn-o btn-sm" href="{{u.tel}}" aria-label="Ligar para a unidade {{u.name}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Ligar</a>
+          </div>
+        </article>
+      </sc-for>
     </div>
   </div>
 </section>
@@ -109,29 +104,6 @@
         <span class="ph" style="border-radius:999px;padding:8px 18px;font-weight:700;font-size:14px">[outras modalidades]</span>
       </div>
       <a class="btn btn-y" href="{{units.0.href}}#grade">Ver grade de aulas <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ UNIDADES ============ -->
-<section id="unidades" class="sec" style="background:#050507;border-top:1px solid var(--line)">
-  <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
-      <h2 class="tk h2">Escolha sua unidade</h2>
-      <p style="color:var(--mute);max-width:24em">Toque em agendar: o WhatsApp da unidade abre com a mensagem pronta.</p>
-    </div>
-    <div style="margin-top:40px;border-bottom:1px solid var(--line)">
-      <sc-for list="{{units}}" as="u">
-        <article class="row">
-          <h3 class="tk y" style="font-size:clamp(52px,4.6cqw,64px);line-height:.88">{{u.name}}</h3>
-          <p style="color:#D7D9E2">{{u.addr}}<br><span style="color:var(--mute);font-size:14px">Aberta até as 22:00 · <a href="{{u.href}}" style="color:#fff;font-weight:700;padding:6px 0">Horários e grade</a></span></p>
-          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-            <a class="btn btn-y btn-sm" href="{{u.wa}}" target="_blank" rel="noopener">Agendar</a>
-            <a class="btn btn-o btn-sm" href="{{u.map}}" target="_blank" rel="noopener" aria-label="Como chegar na unidade {{u.name}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mapa</a>
-            <a class="btn btn-o btn-sm" href="{{u.tel}}" aria-label="Ligar para a unidade {{u.name}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Ligar</a>
-          </div>
-        </article>
-      </sc-for>
     </div>
   </div>
 </section>
@@ -182,7 +154,7 @@
     <a href="{{units.0.href}}#horarios" class="bw" style="position:relative;overflow:hidden;background:var(--blue);color:#fff;border-radius:4px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;text-decoration:none">
       <img class="img" src="{{root}}img/esteiras.jpg" alt="" style="position:absolute;inset:0;mix-blend-mode:multiply;opacity:.6">
       <div style="position:relative;display:grid;gap:12px;justify-items:start">
-        <h3 class="tk" style="font-size:52px;max-width:8em">Aberta até as 22:00: veja os horários</h3>
+        <h3 class="tk" style="font-size:52px;max-width:8em">Até as 22:00 nos dias úteis: veja os horários</h3>
         <span class="btn btn-y btn-sm">Ver horários <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
       </div>
     </a>

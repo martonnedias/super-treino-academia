@@ -55,7 +55,7 @@
           <div class="tk-b">
             <sc-for list="{{units}}" as="u">
               <a class="urow" href="{{u.wa}}" target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">
-                <span style="display:grid;gap:6px;line-height:1.05"><b class="dsp uname">{{u.name}}</b><span style="font-size:14px;font-weight:600;color:#2E3347">Aberta até as 22:00</span></span>
+                <span style="display:grid;gap:6px;line-height:1.05"><b class="dsp uname">{{u.name}}</b><span style="font-size:14px;font-weight:600;color:#2E3347">Até as 22:00 nos dias úteis</span></span>
                 <span class="go btn btn-k btn-sm" style="pointer-events:none;box-shadow:none">
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6L3 21z"/></svg>
                   <span class="go-t">Agendar</span>
@@ -70,7 +70,6 @@
         <div class="print" style="transform:rotate(2.5deg)">
           <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="{{root}}img/aluna-halter.jpg" alt="Aluna sorrindo enquanto treina com halter, parede amarela e aparelhos azuis ao fundo" style="object-position:50% 30%"></div>
           <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Super Treino · Teresina</p>
-          <p class="serial" style="position:absolute;right:16px;bottom:14px;color:var(--blue)">Nº 0001</p>
         </div>
         <div aria-hidden="true" style="position:absolute;left:-18px;bottom:-18px;width:52%;height:26%;background:var(--yellow);border-radius:18px;z-index:-1;transform:rotate(-4deg)"></div>
       </div>
@@ -80,8 +79,8 @@
 
 <!-- faixa -->
 <div aria-label="Resumo" class="mq">
-  <div class="mq-in dsp"><span>Aula experimental</span><span>Aberta até as 22:00</span><span>Dança</span><span>Funcional</span><span>Musculação</span><span>Clima de família</span><span>3 unidades em Teresina</span></div>
-  <div class="mq-in dsp" aria-hidden="true"><span>Aula experimental</span><span>Aberta até as 22:00</span><span>Dança</span><span>Funcional</span><span>Musculação</span><span>Clima de família</span><span>3 unidades em Teresina</span></div>
+  <div class="mq-in dsp"><span>Aula experimental</span><span>Até as 22:00 nos dias úteis</span><span>Dança</span><span>Funcional</span><span>Musculação</span><span>Clima de família</span><span>3 unidades em Teresina</span></div>
+  <div class="mq-in dsp" aria-hidden="true"><span>Aula experimental</span><span>Até as 22:00 nos dias úteis</span><span>Dança</span><span>Funcional</span><span>Musculação</span><span>Clima de família</span><span>3 unidades em Teresina</span></div>
 </div>
 
 <!-- ============ UNIDADES ============ -->
@@ -95,7 +94,7 @@
           <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
             <h3 class="dsp" style="font-size:clamp(56px,10cqw,88px);color:var(--blue)">{{u.name}}</h3>
             <p style="color:var(--slate)">{{u.addr}}</p>
-            <p style="font-weight:800;color:#0B6B38">Aberta até as 22:00</p>
+            <p style="font-weight:800;color:#0B6B38">Até as 22:00 nos dias úteis</p>
             <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:460px">
               <a class="btn btn-y" href="{{u.wa}}" target="_blank" rel="noopener" style="grid-column:1 / -1">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6L3 21z"/></svg>
@@ -121,7 +120,7 @@
         <div class="drow"><h3 class="dsp">Espaço amplo</h3><p style="color:var(--slate)">Salas grandes, com lugar de sobra pra treinar à vontade.</p></div>
         <div class="drow"><h3 class="dsp">Aparelho de sobra</h3><p style="color:var(--slate)">Equipamentos pra treinar o corpo todo, do iniciante ao avançado.</p></div>
         <div class="drow"><h3 class="dsp">Gente que atende</h3><p style="color:var(--slate)">Quem está começando recebe atenção de verdade. Quem já treina pesado também.</p></div>
-        <div class="drow" style="border-bottom:2px solid var(--ink)"><h3 class="dsp">Aberta até as 22:00</h3><p style="color:var(--slate)">Treine depois do trabalho ou da faculdade, sem correria.</p></div>
+        <div class="drow" style="border-bottom:2px solid var(--ink)"><h3 class="dsp">Até as 22:00 nos dias úteis</h3><p style="color:var(--slate)">Treine depois do trabalho ou da faculdade, sem correria.</p></div>
       </div>
     </div>
     <div style="display:grid;gap:20px;grid-template-columns:1fr 1fr;align-items:start">

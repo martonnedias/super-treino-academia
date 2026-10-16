@@ -237,7 +237,7 @@ function protoNav(v, kind, unit, dir) {
     const to = kind === 'home' ? vdir(k) : unitDir(k, unit);
     return `<a href="${dirUrl(dir, to)}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`;
   }).join('');
-  return `<nav class="proto" aria-label="Trocar de layout do protótipo"><span>Layout</span>${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav>`;
+  return `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
 }
 
 function buildHome(v) {
@@ -268,7 +268,7 @@ function buildHome(v) {
   write(path.join(dir, 'index.html'), shell({
     v, kind: 'home', dir,
     title: 'Super Treino Academia · Musculação, funcional e dança em Teresina',
-    desc: 'Três unidades em Teresina (Itararé, Parque Jurema e Renascença II), abertas até as 22:00. Veja planos, horários e agende sua aula experimental pelo WhatsApp.',
+    desc: 'Três unidades em Teresina (Itararé, Parque Jurema e Renascença II), com atendimento até as 22:00 nos dias úteis. Veja planos, horários e agende sua aula experimental pelo WhatsApp.',
     ld: jsonLd({
       '@context': 'https://schema.org', '@type': 'Organization', name: brand.name,
       url: SITE_URL || undefined, sameAs: [brand.instagramUrl],
@@ -289,14 +289,14 @@ function buildUnit(v, u) {
     home: dirUrl(dir, vdir(v)),
     unit: me, units: all, others: all.filter((x) => x.slug !== u.slug),
     plans: planCtx(u), days: me.days,
-    gallery: GALLERY[v].map(([alt, , , f]) => ({ img: `${root}img/${f}`, alt })),
+    gallery: GALLERY[v].map(([alt, , , f]) => ({ img: `${root}img/${f}`, alt, pos: f === 'aluna-pb.jpg' ? '80% 30%' : '50% 50%' })),
     plansNote: u.slug === 'itarare' ? ph('confirmar se os valores seguem vigentes') : ph('valores de Itararé como referência; confirmar nesta unidade'),
   };
   const html = polish(render(read(`tpl/${v}-unit.html`), scope, `${v}-unit`));
   write(path.join(dir, 'index.html'), shell({
     v, kind: 'unit', dir,
     title: `Academia em ${u.name}, Teresina · Super Treino`,
-    desc: `Super Treino ${u.name}: ${addrOf(u)}. Musculação, funcional e dança, aberta até as ${brand.closes}. Agende sua aula experimental pelo WhatsApp.`,
+    desc: `Super Treino ${u.name}: ${addrOf(u)}. Musculação, funcional e dança, atendimento até as ${brand.closes} nos dias úteis. Agende sua aula experimental pelo WhatsApp.`,
     ld: jsonLd({
       '@context': 'https://schema.org', '@type': 'HealthClub', name: `${brand.name} ${u.name}`,
       image: SITE_URL ? `${SITE_URL}/img/${u.images[v][0]}` : undefined,

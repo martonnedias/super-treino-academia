@@ -41,7 +41,7 @@
         <a href="{{home}}#unidades" style="padding:8px 0">Unidades</a><span aria-hidden="true" style="padding:8px 0">/</span>
         <span style="padding:8px 0;color:var(--yellow)">{{unit.name}}</span>
       </nav>
-      <h1 class="ax" style="font-size:clamp(80px,17cqw,180px);line-height:.86">{{unit.name}}</h1>
+      <h1 class="ax" style="font-size:clamp(48px,17cqw,180px);line-height:.86;overflow-wrap:anywhere">{{unit.name}}</h1>
       <p style="font-size:19px;color:#E6E9F5">{{unit.addr}}</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px">
         <a class="btn btn-y" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula experimental <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -151,7 +151,7 @@
 <section aria-label="Fotos da unidade">
   <div class="gal">
     <sc-for list="{{gallery}}" as="g">
-      <div class="gcell zoom"><img class="img" src="{{g.img}}" alt="{{g.alt}}" loading="lazy"></div>
+      <div class="gcell zoom"><img class="img" src="{{g.img}}" alt="{{g.alt}}" loading="lazy" style="object-position:{{g.pos}}"></div>
     </sc-for>
   </div>
 </section>
@@ -177,7 +177,7 @@
             <div class="zoom" style="position:absolute;inset:0"><img class="img" src="{{o.img}}" alt="" loading="lazy"></div>
             <div class="scrim" aria-hidden="true"></div>
             <div style="position:relative;padding:26px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
-              <span style="display:grid;gap:4px"><b class="ax" style="font-size:56px">{{o.name}}</b><span style="color:#DDE0EC;font-size:15px">Teresina-PI · até as 22:00</span></span>
+              <span style="display:grid;gap:4px"><b class="ax" style="font-size:56px">{{o.name}}</b><span style="color:#DDE0EC;font-size:15px">Teresina-PI · até as 22:00 nos dias úteis</span></span>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </div>
           </a>

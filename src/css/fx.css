@@ -65,15 +65,39 @@ html[data-variant="a"] { --fab-bg: #0B0B0F; --fab-fg: #FFC400; --fab-ring: #FFC4
 html[data-variant="c"] { --fab-bg: #FFC400; --fab-fg: #0B0B0F; --fab-ring: #fff; --fab-size: 16px; --fab-font: 'Archivo', 'Arial Narrow', sans-serif; --fab-menu-bg: #15151D; --fab-menu-fg: #fff; --fab-menu-font: 'Archivo', 'Arial Narrow', sans-serif; --fab-hover: rgba(255, 196, 0, .16); }
 html[data-variant="d"] { --fab-bg: #FFC400; --fab-fg: #050507; --fab-ring: #fff; --fab-size: 13px; --fab-font: 'Manrope', system-ui, sans-serif; --fab-menu-bg: #121216; --fab-menu-fg: #fff; --fab-menu-font: 'Manrope', system-ui, sans-serif; --fab-hover: rgba(255, 196, 0, .16); }
 
-/* ---------- Seletor de layout do protótipo ---------- */
-.proto { position: fixed; left: 16px; bottom: 16px; z-index: 80; display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(11, 11, 15, .94); border: 1px solid rgba(255, 255, 255, .22); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); color: #fff; font: 700 12px/1 system-ui, -apple-system, 'Segoe UI', sans-serif; }
-.proto span { padding: 0 8px 0 12px; opacity: .7; letter-spacing: .1em; text-transform: uppercase; font-size: 10px; }
-.proto a { display: grid; place-items: center; min-width: 40px; height: 40px; border-radius: 999px; color: #fff; text-decoration: none; letter-spacing: .04em; }
-.proto a:hover { background: rgba(255, 255, 255, .14); }
-.proto a[aria-current] { background: #FFC400; color: #0B0B0F; }
-.proto a:focus-visible { outline: 2px solid #FFC400; outline-offset: 2px; }
-.proto .proto-all { padding: 0 14px; margin-left: 4px; border: 1px solid rgba(255, 255, 255, .3); }
-@media (max-width: 879px) { .proto { bottom: 78px; left: 10px; } .proto span { display: none; } }
+/* ---------- Seletor de layout do protótipo (recolhido por padrão) ---------- */
+.proto { position: fixed; left: 12px; bottom: 12px; z-index: 80; color: #fff; font: 700 12px/1 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+.proto summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; list-style: none; cursor: pointer; background: rgba(11, 11, 15, .94); border: 1px solid rgba(255, 255, 255, .26); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+.proto summary::-webkit-details-marker { display: none; }
+.proto summary b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #FFC400; color: #0B0B0F; font-size: 12px; }
+.proto summary:focus-visible, .proto a:focus-visible { outline: 2px solid #FFC400; outline-offset: 2px; }
+.proto nav { position: absolute; left: 0; bottom: 52px; display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(11, 11, 15, .96); border: 1px solid rgba(255, 255, 255, .22); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); white-space: nowrap; }
+.proto nav a { display: grid; place-items: center; min-width: 44px; height: 44px; border-radius: 999px; color: #fff; text-decoration: none; letter-spacing: .04em; }
+.proto nav a:hover { background: rgba(255, 255, 255, .14); }
+.proto nav a[aria-current] { background: #FFC400; color: #0B0B0F; }
+.proto nav .proto-all { padding: 0 16px; margin-left: 4px; border: 1px solid rgba(255, 255, 255, .3); }
+@media (max-width: 879px) { .proto { bottom: 76px; left: 10px; } }
+
+/* Campos a confirmar: chip sólido, contraste alto em qualquer fundo */
+.ph { background: #FFC400 !important; color: #0B0B0F !important; border-bottom: 0 !important; border-radius: 4px; padding: 0 5px; }
+
+/* Celular: botões longos quebram em vez de vazar; filhos de grid podem encolher */
+@media (max-width: 479px) {
+  .btn:not(.btn-sm) { white-space: normal; max-width: 100%; text-align: center; padding-left: 18px; padding-right: 18px; min-height: 56px; }
+  .wrap > *, .hero-grid > * { min-width: 0; }
+}
+
+/* Opção A: os três ingressos cabem na primeira tela do desktop */
+@media (min-width: 900px) and (min-height: 700px) {
+  html[data-variant="a"] .urow { min-height: 70px; padding-top: 8px; padding-bottom: 8px; }
+  html[data-variant="a"] .g-tick .tk-t { padding-top: 20px; padding-bottom: 18px; }
+  html[data-variant="a"] main > section:first-child { padding-top: 20px !important; }
+  html[data-variant="a"] .h1 { font-size: 72px; }
+  html[data-variant="a"] .hero-grid { row-gap: 18px; }
+  html[data-variant="a"] .g-tick { margin-top: 10px !important; }
+  html[data-variant="a"] .g-copy { gap: 14px !important; }
+  html[data-variant="a"] .g-copy p { max-width: 25em !important; }
+}
 
 /* ---------- Cabeçalho ao rolar ---------- */
 html[data-variant="a"].fx-scrolled header { box-shadow: 0 10px 28px rgba(4, 10, 48, .4); }

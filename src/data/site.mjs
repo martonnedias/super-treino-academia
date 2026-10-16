@@ -112,7 +112,7 @@ export const plans = [
 export const faq = [
   { q: 'Como funciona a aula experimental?', a: 'Você escolhe a unidade, toca em agendar e a conversa abre no WhatsApp com a mensagem pronta. A equipe confirma dia e horário com você. [duração e condições da aula experimental a confirmar]' },
   { q: 'Nunca treinei. Posso começar?', a: 'Pode. A sala de musculação e as aulas recebem quem está começando, e os instrutores acompanham você nos primeiros passos.' },
-  { q: 'Até que horas a academia funciona?', a: 'As três unidades funcionam até as 22:00. Os horários de abertura, de sábado e de feriados ficam na página de cada unidade.' },
+  { q: 'Até que horas a academia funciona?', a: 'As unidades atendem até as 22:00 nos dias úteis. Os horários de abertura, de sábado e de feriados ficam na página de cada unidade. [abertura e domingo a confirmar]' },
   { q: 'Como são as aulas de dança e funcional?', a: 'A linha Energia & Diversão reúne aulas animadas para treinar se divertindo. A grade com dias e horários fica na página da unidade.' },
   { q: 'Quais as formas de pagamento?', a: 'Os planos bimestral, trimestral e semestral podem ser parcelados em até 2x, 3x e 6x. [formas de pagamento, matrícula e fidelidade a confirmar]' },
 ];

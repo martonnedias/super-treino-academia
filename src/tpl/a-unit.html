@@ -40,7 +40,7 @@
     </nav>
     <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:48px;align-items:center">
       <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
-        <h1 class="dsp h1" style="font-size:clamp(72px,22cqw,96px)">{{unit.name}}</h1>
+        <h1 class="dsp h1" style="font-size:clamp(44px,14cqw,96px)">{{unit.name}}</h1>
         <p style="font-size:19px;color:#E6ECFF">{{unit.addr}}</p>
         <div class="drop tkw" style="width:100%;max-width:520px">
           <div class="tk-t" style="display:flex;justify-content:space-between;gap:12px;align-items:flex-end">
@@ -56,7 +56,7 @@
               <a class="btn btn-o btn-sm" href="{{unit.map}}" target="_blank" rel="noopener">Como chegar</a>
               <a class="btn btn-o btn-sm" href="{{unit.tel}}">Ligar</a>
             </div>
-            <p style="font-size:14px;font-weight:700;color:#2E3347">Funciona até as 22:00</p>
+            <p style="font-size:14px;font-weight:700;color:#2E3347">Até as 22:00 nos dias úteis</p>
           </div>
         </div>
       </div>
@@ -64,7 +64,6 @@
         <div class="print" style="transform:rotate(2deg)">
           <div class="frame" style="aspect-ratio:4/3;border-radius:2px"><img class="img" src="{{unit.img}}" alt="{{unit.alt}}"></div>
           <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Unidade {{unit.name}}</p>
-          <p class="serial" style="position:absolute;right:16px;bottom:14px;color:var(--blue)">Nº {{unit.num}}</p>
         </div>
         <div class="stamp" style="position:absolute;right:-14px;top:-34px">
           <span><span class="dsp" style="font-size:44px;display:block;line-height:.85">4,7</span><span class="dsp" style="font-size:14px;letter-spacing:.14em;font-weight:800;display:block;margin-top:8px">no Google</span></span>
@@ -175,7 +174,7 @@
         <sc-for list="{{others}}" as="o">
           <a class="tkw paper-w" href="{{o.href}}" style="text-decoration:none;display:block;filter:drop-shadow(0 12px 14px rgba(15,36,104,.2))">
             <div class="tk-t" style="padding:22px 24px"><p class="dsp" style="font-size:44px">{{o.name}}</p></div>
-            <div class="tk-b" style="padding:16px 24px 20px;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700;color:var(--slate)">Teresina-PI · até as 22:00</span><span class="dsp" style="font-size:28px;color:var(--blue)">Ver →</span></div>
+            <div class="tk-b" style="padding:16px 24px 20px;display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700;color:var(--slate)">Teresina-PI · até as 22:00 nos dias úteis</span><span class="dsp" style="font-size:28px;color:var(--blue)">Ver →</span></div>
           </a>
         </sc-for>
       </div>
