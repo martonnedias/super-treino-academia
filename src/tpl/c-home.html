@@ -1,0 +1,273 @@
+<div class="nt" id="topo" style="--blue:{{blue}};--yellow:{{yellow}};--ink:{{ink}};--orange:{{orange}}">
+
+<!-- ============ CABEÇALHO ============ -->
+<header style="background:var(--ink);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;position:relative">
+    <a href="#topo" aria-label="Super Treino Academia, início" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+      <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+      <span style="display:flex;flex-direction:column;line-height:1"><span class="ax" style="font-size:26px;font-style:italic">Super Treino</span><span style="font-size:11px;letter-spacing:.5em;font-weight:800;color:#fff;margin-top:3px;text-transform:uppercase">Academia</span></span>
+    </a>
+    <nav class="nav-d" aria-label="Principal" style="display:flex;gap:34px;align-items:center">
+      <a class="nav-link" href="#unidades">Unidades</a>
+      <a class="nav-link" href="#planos">Planos</a>
+      <a class="nav-link" href="#aulas">Aulas</a>
+      <a class="nav-link" href="#depoimentos">Depoimentos</a>
+      <a class="nav-link" href="#duvidas">Dúvidas</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a class="btn btn-y btn-sm hide-m" href="#escolha">Aula experimental</a>
+      <details class="nav-m">
+        <summary aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></summary>
+        <div style="position:absolute;left:0;right:0;top:100%;background:var(--ink);padding:8px 24px 28px;display:grid;border-bottom:1px solid var(--line);box-shadow:0 30px 40px rgba(0,0,0,.5)">
+          <a class="ax" style="font-size:46px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#unidades">Unidades</a>
+          <a class="ax" style="font-size:46px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#planos">Planos</a>
+          <a class="ax" style="font-size:46px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#aulas">Aulas</a>
+          <a class="ax" style="font-size:46px;padding:12px 0;text-decoration:none" href="#duvidas">Dúvidas</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section style="position:relative;background:var(--ink)">
+  <div style="position:relative;min-height:clamp(640px,76cqw,820px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
+    <div style="position:absolute;inset:0;overflow:hidden">
+      <img class="img kb" src="{{root}}img/turma-comemorando.jpg" alt="Alunos de várias idades batendo as mãos e rindo depois do treino" style="object-position:60% 28%">
+    </div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,15,.97) 4%,rgba(11,11,15,.6) 42%,rgba(11,11,15,.1) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,15,.55),rgba(11,11,15,0) 60%)"></div>
+    <div class="wrap rise" style="position:relative;width:100%;padding-bottom:48px;padding-top:72px;display:grid;gap:28px">
+      <h1 class="ax h1">Treine como<br>em <span style="color:var(--yellow);font-style:italic">casa.</span></h1>
+      <p style="font-size:19px;max-width:30em;color:#E6E9F5">Musculação, funcional e dança em três unidades de Teresina. Espaço amplo, preço justo e gente que te recebe bem.</p>
+      <a href="#depoimentos" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:15px;width:fit-content;border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:8px 18px 8px 14px">
+        <span style="display:flex;gap:2px" aria-hidden="true"><sc-for list="{{stars}}" as="s"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#FFC400" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></sc-for></span>
+        4,7 no Google
+      </a>
+    </div>
+  </div>
+
+  <!-- escolha da unidade -->
+  <div id="escolha" style="background:var(--ink);border-top:4px solid var(--yellow)">
+    <div class="wrap" style="padding-top:20px;padding-bottom:6px">
+      <p class="ax" style="font-size:30px">Agendar aula experimental: <span style="color:var(--yellow)">escolha a unidade</span></p>
+    </div>
+    <div class="wrap">
+      <div class="ubar" style="display:grid;grid-template-columns:1fr;border-bottom:1px solid var(--line)">
+        <sc-for list="{{units}}" as="u">
+          <a class="ucell" href="{{u.wa}}" target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">
+            <span style="display:grid"><b class="ax" style="font-size:44px">{{u.name}}</b><span class="sub">Aberta até as 22:00</span></span>
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIDADES ============ -->
+<section id="unidades" class="sec">
+  <div class="wrap">
+    <h2 class="ax h2" style="max-width:9em">Perto de você, em <span style="color:var(--yellow)">Teresina.</span></h2>
+    <div class="rail" style="margin-top:56px">
+      <sc-for list="{{units}}" as="u">
+        <article class="ucard">
+          <div class="zoom" style="position:absolute;inset:0"><img class="img" src="{{u.img}}" alt="{{u.alt}}" loading="lazy"></div>
+          <div class="scrim" aria-hidden="true"></div>
+          <div style="position:relative;padding:26px;display:grid;gap:12px">
+            <h3 class="ax" style="font-size:clamp(40px,3.5cqw,52px)">{{u.name}}</h3>
+            <p style="color:#DDE0EC;font-size:15px">{{u.addr}} · até as 22:00</p>
+            <a class="btn btn-y" href="{{u.wa}}" target="_blank" rel="noopener">Agendar<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><a class="btn btn-o btn-sm" href="{{u.map}}" target="_blank" rel="noopener">Como chegar</a><a class="btn btn-o btn-sm" href="{{u.tel}}">Ligar</a></div>
+            <a href="{{u.href}}" style="font-weight:700;padding:8px 0;text-decoration:underline;text-underline-offset:5px">Horários, grade e planos</a>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIFERENCIAIS ============ -->
+<section id="diferenciais" class="sec grain" style="background:var(--blue)">
+  <div class="wrap">
+    <h2 class="ax h2">Todo mundo<br>é de casa.</h2>
+    <div style="margin-top:56px;border-bottom:1px solid rgba(255,255,255,.4)">
+      <div class="orow" style="position:relative"><h3 class="ax outl" style="font-size:clamp(52px,10cqw,96px)">Espaço amplo</h3><p style="color:#E4EAFF;max-width:26em">Salas grandes, com lugar de sobra pra treinar à vontade.</p><img class="peek" src="{{root}}img/sala-musculacao.jpg" alt=""></div>
+      <div class="orow" style="position:relative"><h3 class="ax outl" style="font-size:clamp(52px,10cqw,96px)">Aparelho de sobra</h3><p style="color:#E4EAFF;max-width:26em">Equipamentos pra treinar o corpo todo, do iniciante ao avançado.</p><img class="peek" src="{{root}}img/pesos-livres.jpg" alt=""></div>
+      <div class="orow" style="position:relative"><h3 class="ax outl" style="font-size:clamp(52px,10cqw,96px)">Gente que atende</h3><p style="color:#E4EAFF;max-width:26em">Quem está começando recebe atenção de verdade. Quem já treina pesado também.</p><img class="peek" src="{{root}}img/instrutor.jpg" alt=""></div>
+      <div class="orow" style="position:relative"><h3 class="ax outl" style="font-size:clamp(52px,10cqw,96px)">Aberta até as 22:00</h3><p style="color:#E4EAFF;max-width:26em">Treine depois do trabalho ou da faculdade, sem correria.</p><img class="peek" src="{{root}}img/esteiras.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLANOS ============ -->
+<section id="planos" class="sec">
+  <div class="wrap">
+    <h2 class="ax h2" style="max-width:9em">Preço justo, <span style="color:var(--yellow)">sem pegadinha.</span></h2>
+    <p style="margin-top:20px;color:var(--mute);max-width:34em">Compare e escolha o plano que combina com o seu ritmo.</p>
+    <p class="swipe" style="margin-top:28px;gap:8px;align-items:center;font-size:14px;font-weight:700;color:var(--yellow)">Arraste para comparar os planos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+    <div style="margin-top:40px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--soft)" tabindex="0" role="region" aria-label="Comparativo de planos">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th scope="col"><span style="position:absolute;left:-9999px">Plano</span></th>
+            <sc-for list="{{plans}}" as="p"><th scope="col" class="{{p.hl}}"><span class="ax" style="font-size:34px;{{p.hlColor}}">{{p.name}}</span></th></sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Valor</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><span class="ax" style="font-size:48px">R$ <span data-count="{{p.price}}">{{p.price}}</span></span></td></sc-for></tr>
+          <tr><td>Pagamento</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}">{{p.parcel}}</td></sc-for></tr>
+          <tr><td>Equivale a</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><b>{{p.month}}</b> por mês</td></sc-for></tr>
+          <tr><td>Economia</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}">{{p.eco}}</td></sc-for></tr>
+          <tr><td></td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><a class="btn {{p.btnC}} btn-sm" href="#escolha" >Quero este</a></td></sc-for></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:24px;font-size:14px;color:var(--mute)">{{plansNote}}</p>
+  </div>
+</section>
+
+<!-- ============ AULAS ============ -->
+<section id="aulas" class="sec" style="background:var(--soft);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="ax" style="font-size:clamp(72px,22cqw,112px)"><span style="color:var(--yellow)">Energia</span><br><span class="outl" style="-webkit-text-stroke-color:var(--orange)">&amp;</span> <span style="color:var(--orange)">Diversão</span></h2>
+    <div class="reveal" style="margin-top:44px;aspect-ratio:21/9;min-height:280px;border-radius:10px;overflow:hidden"><img class="img" src="{{root}}img/danca-confete.jpg" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy" style="object-position:50% 30%"></div>
+    <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:36px 64px;align-items:start">
+      <p style="font-size:20px;color:#E6E9F5;max-width:26em">Aula de dança aqui não é só exercício: é turma animada, música alta e clima de festa. Dá pra chegar sem nunca ter dançado e sair sorrindo.</p>
+      <div style="display:grid;gap:22px;justify-items:start">
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <span style="border:1.5px solid var(--yellow);color:var(--yellow);border-radius:999px;padding:8px 20px;font-weight:700">Dança</span>
+          <span style="border:1.5px solid var(--orange);color:var(--orange);border-radius:999px;padding:8px 20px;font-weight:700">Funcional</span>
+          <span class="ph" style="border-radius:999px;padding:8px 20px;font-weight:700">[outras modalidades]</span>
+        </div>
+        <a class="btn btn-y" href="{{units.0.href}}#grade">Ver grade da unidade<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <p style="margin-top:56px;font-size:14px;color:var(--mute)">Dança por unidade ao longo da semana <span class="ph" style="color:#fff">[demais aulas a confirmar]</span></p>
+    <div class="rail" style="margin-top:16px">
+      <sc-for list="{{days}}" as="d">
+        <div class="dayc" style="flex:0 0 min(46%,180px)">
+          <b class="ax" style="font-size:44px;color:var(--orange)">{{d.label}}</b>
+          <sc-for list="{{d.lines}}" as="l"><span style="font-size:15px;font-weight:600">{{l.time}} · {{l.unit}}</span></sc-for>
+          <sc-if value="{{d.none}}"><span style="font-size:15px;color:var(--mute)">Dança: sem aula · <span class="ph">[funcional]</span></span></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section id="depoimentos" class="sec">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:40px 72px;align-items:end">
+      <p class="ax" style="font-size:clamp(150px,36cqw,240px);color:var(--yellow);line-height:.76">4,7</p>
+      <div style="display:grid;gap:14px;justify-items:start">
+        <div style="display:flex;gap:4px" role="img" aria-label="Nota 4,7 de 5 estrelas no Google"><sc-for list="{{stars}}" as="s"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFC400" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></sc-for></div>
+        <h2 class="ax" style="font-size:clamp(40px,8cqw,64px)">“Me sinto em casa.”</h2>
+        <p style="color:var(--mute)">O que os alunos mais dizem nas avaliações do Google.</p>
+        <a class="btn btn-o btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Super+Treino+Academia+Teresina" target="_blank" rel="noopener">Ver todas no Google</a>
+      </div>
+    </div>
+    <div style="margin-top:72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));border-top:1px solid var(--line)">
+      <figure style="padding:32px 32px 32px 0;display:grid;gap:18px;align-content:start;border-bottom:1px solid var(--line)">
+        <blockquote style="margin:0;font-size:21px;font-weight:600;line-height:1.4"><span class="ph">[Cole aqui o texto de uma avaliação real de 5 estrelas do Google]</span></blockquote>
+        <figcaption style="font-size:14px;color:var(--mute)"><b style="color:#fff"><span class="ph">[Nome do aluno]</span></b> · Google · <span class="ph">[Itararé]</span></figcaption>
+      </figure>
+      <figure style="padding:32px;display:grid;gap:18px;align-content:start;border-bottom:1px solid var(--line)">
+        <blockquote style="margin:0;font-size:21px;font-weight:600;line-height:1.4"><span class="ph">[Cole aqui o texto de uma avaliação real de 5 estrelas do Google]</span></blockquote>
+        <figcaption style="font-size:14px;color:var(--mute)"><b style="color:#fff"><span class="ph">[Nome do aluno]</span></b> · Google · <span class="ph">[Parque Jurema]</span></figcaption>
+      </figure>
+      <figure style="padding:32px;display:grid;gap:18px;align-content:start;border-bottom:1px solid var(--line)">
+        <blockquote style="margin:0;font-size:21px;font-weight:600;line-height:1.4"><span class="ph">[Cole aqui o texto de uma avaliação real de 5 estrelas do Google]</span></blockquote>
+        <figcaption style="font-size:14px;color:var(--mute)"><b style="color:#fff"><span class="ph">[Nome do aluno]</span></b> · Google · <span class="ph">[Renascença II]</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section id="galeria" style="padding-bottom:0">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;padding-bottom:40px">
+    <h2 class="ax h2">Dá uma olhada<br>no clima.</h2>
+    <div style="display:grid;gap:12px;justify-items:start">
+      <p style="color:var(--mute)">Treinos, aulas e festa em @supertreinoacademia</p>
+      <a class="btn btn-y btn-sm" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener">Seguir no Instagram<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+  <div class="gal">
+    <sc-for list="{{gallery}}" as="g">
+      <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="{{g.kind}} no Instagram: {{g.desc}}">
+        <img class="img" src="{{g.img}}" alt="" loading="lazy">
+        <sc-if value="{{ g.reel }}">
+          <span aria-hidden="true" style="position:absolute;top:14px;right:14px;z-index:1;width:40px;height:40px;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></span>
+        </sc-if>
+        <span style="position:absolute;left:18px;bottom:16px;z-index:1;font-weight:700;font-size:14px">{{g.desc}}</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="duvidas" class="sec" style="background:var(--blue)">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:48px 80px;align-items:start">
+    <div style="display:grid;gap:18px">
+      <h2 class="ax h2">Dúvidas<br>frequentes.</h2>
+      <p style="color:#E4EAFF">Não achou o que procurava? Chame a unidade no WhatsApp.</p>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,.4)">
+      <sc-for list="{{faq}}" as="f">
+        <div style="border-top:1px solid rgba(255,255,255,.4)">
+          <h3 style="font-size:inherit;font-weight:inherit">
+            <button type="button" class="acc" data-acc aria-expanded="{{f.expanded}}" aria-controls="faq-{{f.i}}" style="all:unset;box-sizing:border-box;width:100%;min-height:72px;padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-weight:700;font-size:19px;color:#fff">
+              <span>{{f.q}}</span>
+              <svg style="flex:none;transition:transform .4s cubic-bezier(.16,1,.3,1);transform:none" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFC400" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </h3>
+          <p id="faq-{{f.i}}" {{f.hidden}} style="padding:0 0 26px;color:#E4EAFF;max-width:36em">{{f.a}}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section style="background:var(--yellow);color:var(--ink);padding:clamp(72px,10cqw,128px) 0">
+  <div class="wrap" style="display:grid;gap:40px;justify-items:start">
+    <h2 class="ax" style="font-size:clamp(64px,19cqw,104px)">Bora<br>conhecer?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <sc-for list="{{units}}" as="u"><a class="btn btn-k" href="{{u.wa}}" target="_blank" rel="noopener" style="min-height:62px">{{u.name}}<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></sc-for>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer style="background:var(--ink);color:#D3D7E4">
+  <div class="wrap" style="padding-top:64px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a href="#topo" aria-label="Super Treino Academia, início" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+        <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+        <span style="display:flex;flex-direction:column;line-height:1"><span class="ax" style="font-size:26px;font-style:italic">Super Treino</span><span style="font-size:11px;letter-spacing:.5em;font-weight:800;color:#fff;margin-top:3px;text-transform:uppercase">Academia</span></span>
+      </a>
+      <p style="font-size:15px">Treino com preço justo e clima de família, em Teresina-PI.</p>
+      <a href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" style="font-weight:700;color:#fff">Instagram @supertreinoacademia</a>
+    </div>
+    <div style="display:grid;gap:12px;align-content:start;font-size:15px">
+      <p class="ax" style="font-size:26px;color:var(--yellow)">Unidades</p>
+      <p><b style="color:#fff">Itararé</b><br>{{units.0.addr}}</p>
+      <p><b style="color:#fff">Parque Jurema</b><br>{{units.1.addr}}</p>
+      <p><b style="color:#fff">Renascença II</b><br>{{units.2.addr}}</p>
+    </div>
+    <div style="display:grid;gap:2px;align-content:start;font-size:16px">
+      <p class="ax" style="font-size:26px;color:var(--yellow);margin-bottom:10px">Navegue</p>
+      <a href="#unidades" style="padding:7px 0">Unidades</a><a href="#planos" style="padding:7px 0">Planos</a><a href="#aulas" style="padding:7px 0">Aulas de dança</a><a href="#duvidas" style="padding:7px 0">Dúvidas</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:20px;padding-bottom:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais da academia</span><span>Teresina · Piauí</span></div></div>
+</footer>
+
+<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;border-top:1px solid var(--line)">
+  <a class="btn btn-y" href="#escolha" style="flex:1;min-height:54px">Agendar aula experimental</a>
+</div>
+
+</div>

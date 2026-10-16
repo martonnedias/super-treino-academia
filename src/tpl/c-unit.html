@@ -1,0 +1,212 @@
+<div class="nt" id="topo" style="--blue:{{blue}};--yellow:{{yellow}};--ink:{{ink}};--orange:{{orange}}">
+
+<header style="background:var(--ink);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--line)">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;position:relative">
+    <a href="{{home}}" aria-label="Super Treino Academia, página inicial" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+      <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+      <span style="display:flex;flex-direction:column;line-height:1"><span class="ax" style="font-size:26px;font-style:italic">Super Treino</span><span style="font-size:11px;letter-spacing:.5em;font-weight:800;color:#fff;margin-top:3px;text-transform:uppercase">Academia</span></span>
+    </a>
+    <nav class="nav-d" aria-label="Principal" style="display:flex;gap:34px;align-items:center">
+      <a class="nav-link" href="{{home}}#unidades">Unidades</a>
+      <a class="nav-link" href="#horarios">Horários</a>
+      <a class="nav-link" href="#grade">Grade</a>
+      <a class="nav-link" href="#planos">Planos</a>
+      <a class="nav-link" href="#como-chegar">Como chegar</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a class="btn btn-y btn-sm hide-m" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula</a>
+      <details class="nav-m">
+        <summary aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></summary>
+        <div style="position:absolute;left:0;right:0;top:100%;background:var(--ink);padding:8px 24px 28px;display:grid;border-bottom:1px solid var(--line)">
+          <a class="ax" style="font-size:44px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="{{home}}#unidades">Outras unidades</a>
+          <a class="ax" style="font-size:44px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#horarios">Horários</a>
+          <a class="ax" style="font-size:44px;padding:12px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#grade">Grade</a>
+          <a class="ax" style="font-size:44px;padding:12px 0;text-decoration:none" href="#planos">Planos</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ TOPO ============ -->
+<section style="position:relative;background:var(--ink)">
+  <div style="position:relative;min-height:clamp(600px,62cqw,720px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
+    <div style="position:absolute;inset:0;overflow:hidden"><img class="img kb" src="{{unit.img}}" alt="{{unit.alt}}"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,15,.97) 6%,rgba(11,11,15,.55) 45%,rgba(11,11,15,.15) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to right,rgba(11,11,15,.6),rgba(11,11,15,0) 60%)"></div>
+    <div class="wrap rise" style="position:relative;width:100%;padding-top:48px;padding-bottom:48px;display:grid;gap:22px">
+      <nav aria-label="Você está em" style="font-size:14px;color:#D8DBE6;display:flex;gap:8px;flex-wrap:wrap;font-weight:600">
+        <a href="{{home}}" style="padding:8px 0">Início</a><span aria-hidden="true" style="padding:8px 0">/</span>
+        <a href="{{home}}#unidades" style="padding:8px 0">Unidades</a><span aria-hidden="true" style="padding:8px 0">/</span>
+        <span style="padding:8px 0;color:var(--yellow)">{{unit.name}}</span>
+      </nav>
+      <h1 class="ax" style="font-size:clamp(80px,17cqw,180px);line-height:.86">{{unit.name}}</h1>
+      <p style="font-size:19px;color:#E6E9F5">{{unit.addr}}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn-y" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula experimental <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-o" href="{{unit.map}}" target="_blank" rel="noopener">Como chegar</a>
+        <a class="btn btn-o" href="{{unit.tel}}">Ligar</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:4px solid var(--yellow)">
+    <div class="wrap">
+      <div class="cells" style="display:grid;grid-template-columns:1fr;border-bottom:1px solid var(--line)">
+        <div class="cell"><b>Até as 22:00</b><span>De segunda a sexta</span></div>
+        <div class="cell"><b style="color:var(--yellow)">4,7 no Google</b><span>Nota desta unidade · {{unit.rating}} ({{unit.reviews}} avaliações)</span></div>
+        <div class="cell"><b>Dança e funcional</b><span>Energia &amp; Diversão na grade</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORÁRIOS + MAPA ============ -->
+<section class="sec">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:64px 80px;align-items:start">
+    <div id="horarios">
+      <h2 class="ax h2">Horários</h2>
+      <div style="margin-top:36px;border-bottom:1px solid var(--line)">
+        <div class="hrow"><span class="ax" style="font-size:38px">Segunda a sexta</span><span style="font-size:19px;font-weight:700">{{unit.weekdays}}</span></div>
+        <div class="hrow"><span class="ax" style="font-size:38px">Sábado</span><span style="font-size:19px;font-weight:700">{{unit.sat}}</span></div>
+        <div class="hrow"><span class="ax" style="font-size:38px">Domingo</span><span style="font-size:19px;font-weight:700">{{unit.sun}}</span></div>
+      </div>
+      <div style="margin-top:28px;display:flex;gap:14px;align-items:flex-start;border:1px solid var(--yellow);border-radius:8px;padding:18px 20px">
+        <svg style="flex:none;margin-top:2px" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18.5v.01"/></svg>
+        <p style="font-size:16px;color:#E6E9F5"><b style="color:var(--yellow)">Feriados:</b> o horário pode mudar. Confirme com a unidade no WhatsApp antes de vir.</p>
+      </div>
+    </div>
+    <div id="como-chegar">
+      <h2 class="ax h2">Como <span style="color:var(--yellow)">chegar</span></h2>
+      <div style="margin-top:36px;position:relative;aspect-ratio:16/11;border-radius:10px;overflow:hidden;background:#14161F;border:1px solid var(--line)">
+        <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+          <rect width="640" height="440" fill="#14161F"/>
+          <path d="M0 130h640M0 310h640M170 0v440M450 0v440" stroke="#262A38" stroke-width="22"/>
+          <path d="M0 220h640M310 0v440" stroke="#262A38" stroke-width="12"/>
+          <path d="M-20 360L660 70" stroke="#2E3344" stroke-width="16"/>
+          <rect x="196" y="34" width="96" height="64" rx="8" fill="#1B2A22"/>
+          <rect x="474" y="330" width="130" height="72" rx="8" fill="#1B2A22"/>
+          <circle cx="310" cy="146" r="56" fill="#FFC400" opacity=".14"/>
+          <g transform="translate(310 220)"><path d="M0 0c-26-34-40-52-40-74a40 40 0 1 1 80 0c0 22-14 40-40 74z" fill="#FFC400"/><circle cy="-76" r="15" fill="#0B0B0F"/></g>
+        </svg>
+        <iframe class="map-embed" src="{{unit.embed}}" title="Mapa da unidade {{unit.name}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+      </div>
+      <p style="margin-top:20px;color:#D8DBE6">{{unit.addr}}{{unit.refDot}}</p>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:460px">
+        <a class="btn btn-y btn-sm" href="{{unit.map}}" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="btn btn-o btn-sm" href="{{unit.tel}}">Ligar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRADE ============ -->
+<section id="grade" class="sec" style="background:var(--soft);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="ax" style="font-size:clamp(64px,14cqw,112px);line-height:.9"><span style="color:var(--yellow)">Grade</span> <span style="color:var(--orange)">de aulas</span></h2>
+    <p style="margin-top:18px;color:var(--mute)">Escolha o dia. Aulas, dias e horários <span class="ph" style="color:#fff">[confirmar com a unidade]</span>.</p>
+    <div role="group" aria-label="Dia da semana" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{days}}" as="d">
+        <button type="button" class="pill" data-day="{{d.i}}" aria-pressed="{{d.pressed}}">{{d.label}}</button>
+      </sc-for>
+    </div>
+    <sc-for list="{{days}}" as="d"><ul data-panel="{{d.i}}" {{d.hidden}} style="list-style:none;padding:0;margin:36px 0 0;border-bottom:1px solid var(--line)"><sc-for list="{{d.rows}}" as="r">
+        <li class="lineup">
+          <span class="ax {{r.ph}}" style="font-size:44px;color:var(--yellow)">{{r.time}}</span>
+          <span><b class="ax {{r.ph}}" style="font-size:clamp(30px,5cqw,48px);display:inline-block">{{r.name}}</b><span style="display:block;font-size:15px;color:var(--mute)">{{r.note}}</span></span>
+          <a class="btn btn-o btn-sm hide-m" href="{{unit.wa}}" target="_blank" rel="noopener">Reservar</a>
+        </li>
+      </sc-for></ul></sc-for>
+  </div>
+</section>
+
+<!-- ============ PLANOS ============ -->
+<section id="planos" class="sec">
+  <div class="wrap">
+    <h2 class="ax h2" style="max-width:9em">Planos <span style="color:var(--yellow)">{{unit.name}}</span></h2>
+    
+    <p class="swipe" style="margin-top:28px;gap:8px;align-items:center;font-size:14px;font-weight:700;color:var(--yellow)">Arraste para comparar os planos <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+    <div style="margin-top:40px;overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--soft)" tabindex="0" role="region" aria-label="Comparativo de planos">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th scope="col"><span style="position:absolute;left:-9999px">Plano</span></th>
+            <sc-for list="{{plans}}" as="p"><th scope="col" class="{{p.hl}}"><span class="ax" style="font-size:34px;{{p.hlColor}}">{{p.name}}</span></th></sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Valor</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><span class="ax" style="font-size:48px">R$ <span data-count="{{p.price}}">{{p.price}}</span></span></td></sc-for></tr>
+          <tr><td>Pagamento</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}">{{p.parcel}}</td></sc-for></tr>
+          <tr><td>Equivale a</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><b>{{p.month}}</b> por mês</td></sc-for></tr>
+          <tr><td>Economia</td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}">{{p.eco}}</td></sc-for></tr>
+          <tr><td></td><sc-for list="{{plans}}" as="p"><td class="{{p.hl}}"><a class="btn {{p.btnC}} btn-sm" href="{{p.wa}}" target="_blank" rel="noopener">Quero este</a></td></sc-for></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:24px;font-size:14px;color:var(--mute)">{{plansNote}}</p>
+  </div>
+</section>
+
+<!-- ============ FOTOS ============ -->
+<section aria-label="Fotos da unidade">
+  <div class="gal">
+    <sc-for list="{{gallery}}" as="g">
+      <div class="gcell zoom"><img class="img" src="{{g.img}}" alt="{{g.alt}}" loading="lazy"></div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÕES + OUTRAS ============ -->
+<section class="sec">
+  <div class="wrap" style="display:grid;gap:80px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));border-top:1px solid var(--line)">
+      <figure style="padding:32px 32px 32px 0;display:grid;gap:16px;border-bottom:1px solid var(--line)">
+        <blockquote style="margin:0;font-size:22px;font-weight:600;line-height:1.4"><span class="ph">[Avaliação real desta unidade no Google]</span></blockquote>
+        <figcaption style="font-size:14px;color:var(--mute)"><b style="color:#fff"><span class="ph">[Nome do aluno]</span></b> · Google</figcaption>
+      </figure>
+      <figure style="padding:32px 32px 32px 0;display:grid;gap:16px;border-bottom:1px solid var(--line)">
+        <blockquote style="margin:0;font-size:22px;font-weight:600;line-height:1.4"><span class="ph">[Avaliação real desta unidade no Google]</span></blockquote>
+        <figcaption style="font-size:14px;color:var(--mute)"><b style="color:#fff"><span class="ph">[Nome do aluno]</span></b> · Google</figcaption>
+      </figure>
+    </div>
+    <div>
+      <h2 class="ax" style="font-size:clamp(48px,8cqw,72px)">Outras <span style="color:var(--yellow)">unidades</span></h2>
+      <div class="rail" style="margin-top:32px">
+        <sc-for list="{{others}}" as="o">
+          <a class="ucard" href="{{o.href}}">
+            <div class="zoom" style="position:absolute;inset:0"><img class="img" src="{{o.img}}" alt="" loading="lazy"></div>
+            <div class="scrim" aria-hidden="true"></div>
+            <div style="position:relative;padding:26px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px">
+              <span style="display:grid;gap:4px"><b class="ax" style="font-size:56px">{{o.name}}</b><span style="color:#DDE0EC;font-size:15px">Teresina-PI · até as 22:00</span></span>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--yellow);color:var(--ink);padding:clamp(64px,9cqw,112px) 0">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-end">
+    <h2 class="ax" style="font-size:clamp(60px,14cqw,104px)">Bora treinar<br>na {{unit.name}}?</h2>
+    <a class="btn btn-k" href="{{unit.wa}}" target="_blank" rel="noopener" style="min-height:64px">Agendar aula experimental <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer style="background:var(--ink);color:#D3D7E4;border-top:1px solid var(--line)">
+  <div class="wrap" style="padding-top:28px;padding-bottom:28px;font-size:14px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:center">
+    <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+    <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span>
+    <a href="{{home}}" style="font-weight:700;color:#fff;padding:8px 0">Voltar para a página inicial</a>
+  </div>
+</footer>
+
+<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 12px;gap:8px;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--line)">
+  <a class="btn btn-y btn-sm" href="{{unit.wa}}" target="_blank" rel="noopener" style="padding:0 8px">Agendar</a>
+  <a class="btn btn-o btn-sm" href="{{unit.map}}" target="_blank" rel="noopener" style="padding:0 8px">Mapa</a>
+  <a class="btn btn-o btn-sm" href="{{unit.tel}}" style="padding:0 8px">Ligar</a>
+</div>
+
+</div>

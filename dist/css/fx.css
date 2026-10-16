@@ -1,0 +1,102 @@
+/* Camada de interação e efeitos, comum aos três layouts (A, C e D).
+ * Carregada depois do CSS de cada layout. Variantes via html[data-variant]. */
+
+html { scroll-padding-top: 88px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+[hidden] { display: none !important; }
+
+.skip { position: absolute; left: 12px; top: -64px; z-index: 200; padding: 14px 20px; border-radius: 8px; background: #FFC400; color: #0B0B0F; font: 700 15px/1 system-ui, sans-serif; text-decoration: none; }
+.skip:focus { top: 12px; }
+
+/* Números que contam ao entrar na tela herdam a tipografia do contêiner */
+.num { font: inherit; letter-spacing: inherit; text-transform: inherit; }
+
+/* FAQ: ícone gira quando aberto */
+.acc[aria-expanded="true"] svg { transform: rotate(135deg) !important; }
+
+/* Mapa embutido: nos layouts escuros o mapa claro é invertido para combinar */
+.map-embed { background: transparent; }
+html[data-variant="c"] .map-embed,
+html[data-variant="d"] .map-embed { filter: invert(.92) hue-rotate(180deg) saturate(.7) brightness(.95); }
+
+/* Barra de progresso de rolagem */
+.fx-progress { position: fixed; left: 0; top: 0; width: 100%; height: 3px; z-index: 100; background: #FFC400; transform: scaleX(0); transform-origin: left; pointer-events: none; }
+
+/* ---------- Revelação por rolagem ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .fx-r {
+    opacity: 0; translate: 0 32px;
+    transition: opacity .9s cubic-bezier(.16, 1, .3, 1) calc(var(--d, 0) * 80ms), translate 1s cubic-bezier(.16, 1, .3, 1) calc(var(--d, 0) * 80ms);
+  }
+  .js .fx-r.fx-in { opacity: 1; translate: 0 0; }
+
+  /* Títulos em máscara: cada palavra sobe de dentro de uma linha */
+  .js .fx-split .fx-wi { translate: 0 118%; transition: translate 1s cubic-bezier(.16, 1, .3, 1) calc(var(--i, 0) * 55ms); }
+  .js .fx-split.fx-in .fx-wi { translate: 0 0; }
+
+  /* Paralaxe: --sy é atualizado pelo script a cada rolagem */
+  html[data-variant="c"] .fx-par,
+  html[data-variant="d"] .fx-par { height: calc(100% + 90px); margin-top: -90px; translate: 0 min(90px, calc(var(--sy, 0) * .08px)); }
+  html[data-variant="a"] .fx-par { translate: 0 max(-70px, calc(var(--sy, 0) * -.05px)); }
+}
+.fx-w { display: inline-block; overflow: clip; vertical-align: top; padding: .14em .07em .1em; margin: -.14em -.07em -.1em; }
+.fx-wi { display: inline-block; }
+
+/* ---------- Botão flutuante de WhatsApp ---------- */
+.wa-fab { position: fixed; right: 24px; bottom: 24px; z-index: 70; display: none; flex-direction: column; align-items: flex-end; gap: 12px; }
+@media (min-width: 880px) { .wa-fab { display: flex; } }
+.js .wa-fab { opacity: 0; translate: 0 22px; pointer-events: none; transition: opacity .5s, translate .7s cubic-bezier(.16, 1, .3, 1); }
+.fx-past-hero .wa-fab { opacity: 1; translate: 0 0; pointer-events: auto; }
+.wa-btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 24px 0 18px;
+  border: 0; border-radius: 999px; background: var(--fab-bg); color: var(--fab-fg);
+  font: 800 var(--fab-size) / 1 var(--fab-font); letter-spacing: .05em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .38), 0 2px 6px rgba(0, 0, 0, .28);
+  transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+.wa-btn:hover { transform: translateY(-3px); }
+.wa-btn:focus-visible { outline: 3px solid var(--fab-ring); outline-offset: 3px; }
+.wa-menu { width: min(330px, 86vw); padding: 10px; border-radius: 18px; background: var(--fab-menu-bg); color: var(--fab-menu-fg); box-shadow: 0 26px 56px rgba(0, 0, 0, .45); }
+.wa-menu p { margin: 8px 12px 10px; font: 700 13px/1.2 system-ui, sans-serif; opacity: .7; }
+.wa-menu a { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 54px; padding: 0 14px; border-radius: 12px; color: inherit; text-decoration: none; font: 800 17px/1.1 var(--fab-menu-font); }
+.wa-menu a span { font: 600 12px/1 system-ui, sans-serif; opacity: .65; }
+.wa-menu a:hover, .wa-menu a:focus-visible { background: var(--fab-hover); outline: none; }
+html[data-variant="a"] { --fab-bg: #0B0B0F; --fab-fg: #FFC400; --fab-ring: #FFC400; --fab-size: 21px; --fab-font: 'Big Shoulders Display', 'Arial Narrow', sans-serif; --fab-menu-bg: #fff; --fab-menu-fg: #0B0B0F; --fab-menu-font: 'Big Shoulders Display', 'Arial Narrow', sans-serif; --fab-hover: #FFF2C2; }
+html[data-variant="c"] { --fab-bg: #FFC400; --fab-fg: #0B0B0F; --fab-ring: #fff; --fab-size: 16px; --fab-font: 'Archivo', 'Arial Narrow', sans-serif; --fab-menu-bg: #15151D; --fab-menu-fg: #fff; --fab-menu-font: 'Archivo', 'Arial Narrow', sans-serif; --fab-hover: rgba(255, 196, 0, .16); }
+html[data-variant="d"] { --fab-bg: #FFC400; --fab-fg: #050507; --fab-ring: #fff; --fab-size: 13px; --fab-font: 'Manrope', system-ui, sans-serif; --fab-menu-bg: #121216; --fab-menu-fg: #fff; --fab-menu-font: 'Manrope', system-ui, sans-serif; --fab-hover: rgba(255, 196, 0, .16); }
+
+/* ---------- Seletor de layout do protótipo ---------- */
+.proto { position: fixed; left: 16px; bottom: 16px; z-index: 80; display: flex; align-items: center; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(11, 11, 15, .94); border: 1px solid rgba(255, 255, 255, .22); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); color: #fff; font: 700 12px/1 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+.proto span { padding: 0 8px 0 12px; opacity: .7; letter-spacing: .1em; text-transform: uppercase; font-size: 10px; }
+.proto a { display: grid; place-items: center; min-width: 40px; height: 40px; border-radius: 999px; color: #fff; text-decoration: none; letter-spacing: .04em; }
+.proto a:hover { background: rgba(255, 255, 255, .14); }
+.proto a[aria-current] { background: #FFC400; color: #0B0B0F; }
+.proto a:focus-visible { outline: 2px solid #FFC400; outline-offset: 2px; }
+.proto .proto-all { padding: 0 14px; margin-left: 4px; border: 1px solid rgba(255, 255, 255, .3); }
+@media (max-width: 879px) { .proto { bottom: 78px; left: 10px; } .proto span { display: none; } }
+
+/* ---------- Cabeçalho ao rolar ---------- */
+html[data-variant="a"].fx-scrolled header { box-shadow: 0 10px 28px rgba(4, 10, 48, .4); }
+html[data-variant="c"].fx-scrolled header { background: rgba(11, 11, 15, .96); }
+
+/* ---------- Opção A: ingressos, selo e confete ---------- */
+.fx-tilt { transition: transform .55s cubic-bezier(.16, 1, .3, 1); will-change: transform; }
+html[data-variant="a"] .stamp { transition: transform .45s cubic-bezier(.16, 1, .3, 1); }
+html[data-variant="a"] .stamp:hover { transform: rotate(-2deg) scale(1.08); }
+.fx-confetti { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 150; }
+
+/* ---------- Opção C: lanterna ---------- */
+.fx-spot { position: relative; }
+.fx-spot::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: 0; transition: opacity .5s; background: radial-gradient(440px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 196, 0, .18), transparent 62%); }
+.fx-spot:hover::after { opacity: 1; }
+
+/* ---------- Opção D: anel de cursor e cor ao rolar ---------- */
+.fx-cursor { position: fixed; left: 0; top: 0; width: 0; height: 0; pointer-events: none; z-index: 150; }
+.fx-cursor::before { content: ""; position: absolute; left: -18px; top: -18px; width: 36px; height: 36px; border: 1.5px solid #FFC400; border-radius: 50%; opacity: 0; transition: opacity .3s, scale .4s cubic-bezier(.16, 1, .3, 1), background-color .3s; }
+.fx-cursor.on::before { opacity: .9; }
+.fx-cursor.big::before { scale: 1.9; background: rgba(255, 196, 0, .16); }
+.bw.fx-color .img { filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fx-tilt, .wa-btn, .fx-spot::after { transition: none; }
+}

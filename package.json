@@ -1,0 +1,15 @@
+{
+  "name": "super-treino-academia",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Site da Super Treino Academia (Teresina): protótipo com 3 layouts para o cliente escolher.",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:a": "node build.mjs --final=a",
+    "build:c": "node build.mjs --final=c",
+    "build:d": "node build.mjs --final=d",
+    "serve": "node build.mjs && npx --yes serve dist -l 4173"
+  },
+  "engines": { "node": ">=20" }
+}

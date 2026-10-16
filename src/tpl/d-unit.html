@@ -1,0 +1,192 @@
+<div class="dx" id="topo" style="--yellow:{{yellow}};--blue:{{blue}}">
+
+<header style="position:absolute;top:0;left:0;right:0;z-index:40">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:96px;position:relative">
+    <a href="{{home}}" aria-label="Super Treino Academia, página inicial" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+      <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+      <span style="display:flex;flex-direction:column;line-height:.9"><span class="tk" style="font-size:32px;font-style:italic">Super Treino</span><span style="font-size:11px;letter-spacing:.5em;font-weight:800;color:#fff;text-transform:uppercase">Academia</span></span>
+    </a>
+    <nav class="nav-d" aria-label="Principal" style="display:flex;gap:32px;align-items:center">
+      <a class="nav-link" href="{{home}}#unidades">Unidades</a>
+      <a class="nav-link" href="#horarios">Horários</a>
+      <a class="nav-link" href="#grade">Grade</a>
+      <a class="nav-link" href="#planos">Planos</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="btn btn-o btn-sm hide-m" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <details class="nav-m">
+        <summary aria-label="Abrir menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></summary>
+        <div style="position:absolute;left:0;right:0;top:100%;background:#050507;padding:8px 24px 28px;display:grid;border-bottom:1px solid var(--line)">
+          <a class="tk" style="font-size:44px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="{{home}}#unidades">Outras unidades</a>
+          <a class="tk" style="font-size:44px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#horarios">Horários</a>
+          <a class="tk" style="font-size:44px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--line)" href="#grade">Grade</a>
+          <a class="tk" style="font-size:44px;padding:10px 0;text-decoration:none" href="#planos">Planos</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ TOPO ============ -->
+<section style="position:relative;background:#050507;overflow:hidden">
+  <div class="bw" style="position:absolute;inset:0"><img class="img" src="{{unit.img}}" alt="{{unit.alt}}" style="object-position:70% 50%"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to right,#050507 15%,rgba(5,5,7,.7) 45%,rgba(5,5,7,.1) 80%)"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,#050507 4%,rgba(5,5,7,0) 45%)"></div>
+  <div class="shade-m" aria-hidden="true" style="position:absolute;inset:0;background:transparent"></div>
+  <div class="wrap rise" style="position:relative;padding-top:clamp(140px,14cqw,180px);padding-bottom:48px;display:grid;gap:22px;justify-items:start">
+    <nav aria-label="Você está em" style="font-size:13px;color:#D7D9E2;display:flex;gap:8px;flex-wrap:wrap;font-weight:800;letter-spacing:.1em;text-transform:uppercase">
+      <a href="{{home}}" style="padding:8px 0">Início</a><span aria-hidden="true" style="padding:8px 0">/</span>
+      <a href="{{home}}#unidades" style="padding:8px 0">Unidades</a><span aria-hidden="true" style="padding:8px 0">/</span>
+      <span class="y" style="padding:8px 0">{{unit.name}}</span>
+    </nav>
+    <h1 class="tk"><span style="display:block;font-size:clamp(40px,6cqw,60px)">Super Treino</span><span class="y" style="display:block;font-size:clamp(84px,16cqw,160px);line-height:.84">{{unit.name}}</span></h1>
+    <p style="color:#D7D9E2;font-size:17px">{{unit.addr}}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn btn-y" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula experimental <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+      <a class="btn btn-o" href="{{unit.map}}" target="_blank" rel="noopener">Como chegar</a>
+      <a class="btn btn-o" href="{{unit.tel}}">Ligar</a>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;padding-bottom:clamp(48px,6cqw,72px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:28px;border-top:1px solid var(--line)">
+      <div class="stat"><b>22h</b><span>Aberta até as 22:00</span></div>
+      <div class="stat"><b class="y">4,7</b><span>Nota da rede no Google</span></div>
+      <div class="stat"><b>3</b><span>Modalidades</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HORÁRIOS + MAPA ============ -->
+<section class="sec" style="border-top:1px solid var(--line)">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:64px 80px;align-items:start">
+    <div id="horarios">
+      <h2 class="tk h2">Horários</h2>
+      <div style="margin-top:32px;border-bottom:1px solid var(--line)">
+        <div class="hrow"><span class="tk" style="font-size:34px">Segunda a sexta</span><span style="font-weight:700">{{unit.weekdays}}</span></div>
+        <div class="hrow"><span class="tk" style="font-size:34px">Sábado</span><span style="font-weight:700">{{unit.sat}}</span></div>
+        <div class="hrow"><span class="tk" style="font-size:34px">Domingo</span><span style="font-weight:700">{{unit.sun}}</span></div>
+      </div>
+      <p style="margin-top:24px;padding:16px 20px;background:var(--yellow);color:#050507;border-radius:4px;font-weight:600"><b>Feriados:</b> o horário pode mudar. Confirme com a unidade no WhatsApp antes de vir.</p>
+    </div>
+    <div id="como-chegar">
+      <h2 class="tk h2">Como <span class="y">chegar</span></h2>
+      <div style="margin-top:32px;position:relative;aspect-ratio:16/11;overflow:hidden;background:#0E0E12;border:1px solid var(--line);border-radius:4px">
+        <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+          <rect width="640" height="440" fill="#0E0E12"/>
+          <path d="M0 130h640M0 310h640M170 0v440M450 0v440" stroke="#22222A" stroke-width="22"/>
+          <path d="M0 220h640M310 0v440" stroke="#22222A" stroke-width="12"/>
+          <path d="M-20 360L660 70" stroke="#2A2A33" stroke-width="16"/>
+          <circle cx="310" cy="146" r="60" fill="none" stroke="#FFC400" stroke-opacity=".35" stroke-dasharray="4 6"/>
+          <g transform="translate(310 220)"><path d="M0 0c-26-34-40-52-40-74a40 40 0 1 1 80 0c0 22-14 40-40 74z" fill="#FFC400"/><circle cy="-76" r="15" fill="#050507"/></g>
+        </svg>
+        <iframe class="map-embed" src="{{unit.embed}}" title="Mapa da unidade {{unit.name}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+      </div>
+      <p style="margin-top:18px;color:#D7D9E2">{{unit.addr}}{{unit.refDot}}</p>
+      <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:10px">
+        <a class="btn btn-y btn-sm" href="{{unit.map}}" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="btn btn-o btn-sm" href="{{unit.tel}}">Ligar para a unidade</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GRADE ============ -->
+<section id="grade" class="sec" style="background:var(--soft)">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <h2 class="tk h2">Grade de <span class="y">aulas</span></h2>
+      <p style="color:var(--mute);max-width:26em">Escolha o dia. Aulas, dias e horários <span class="ph" style="color:#fff">[confirmar com a unidade]</span>.</p>
+    </div>
+    <div role="group" aria-label="Dia da semana" style="margin-top:32px;display:flex;flex-wrap:wrap;gap:10px">
+      <sc-for list="{{days}}" as="d">
+        <button type="button" class="pill" data-day="{{d.i}}" aria-pressed="{{d.pressed}}">{{d.label}}</button>
+      </sc-for>
+    </div>
+    <sc-for list="{{days}}" as="d"><ul data-panel="{{d.i}}" {{d.hidden}} style="list-style:none;padding:0;margin:32px 0 0;border-bottom:1px solid var(--line)"><sc-for list="{{d.rows}}" as="r">
+        <li class="lineup">
+          <span class="tk y {{r.ph}}" style="font-size:44px">{{r.time}}</span>
+          <span><b class="tk {{r.ph}}" style="font-size:clamp(30px,4cqw,42px);display:inline-block">{{r.name}}</b><span style="display:block;font-size:14px;color:var(--mute)">{{r.note}}</span></span>
+          <a class="btn btn-o btn-sm hide-m" href="{{unit.wa}}" target="_blank" rel="noopener">Reservar</a>
+        </li>
+      </sc-for></ul></sc-for>
+  </div>
+</section>
+
+<!-- ============ PLANOS ============ -->
+<section id="planos" class="sec">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <h2 class="tk h2">Planos <span class="y">{{unit.name}}</span></h2>
+      <p style="color:var(--mute);max-width:26em"> {{plansNote}}</p>
+    </div>
+    <div style="margin-top:40px;border-bottom:1px solid var(--line)">
+      <sc-for list="{{plans}}" as="p">
+        <div class="row" style="padding-left:0;padding-right:0">
+          <p class="tk y" style="font-size:clamp(64px,8cqw,84px);line-height:.8">R$<span data-count="{{p.price}}">{{p.price}}</span></p>
+          <div>
+            <h3 class="tk" style="font-size:34px">{{p.name}} <sc-if value="{{p.hasBadge}}"><span style="display:inline-block;vertical-align:middle;margin-left:8px;background:var(--yellow);color:#050507;font-family:Manrope,sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 10px;border-radius:999px">Melhor preço</span></sc-if></h3>
+            <p style="color:var(--mute)">{{p.parcel}} · equivale a {{p.month}} por mês · {{p.eco}}</p>
+          </div>
+          <a class="btn {{p.btnD}} btn-sm" href="{{p.wa}}" target="_blank" rel="noopener">Quero este</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOTOS ============ -->
+<section aria-label="Fotos da unidade">
+  <div class="strip">
+    <sc-for list="{{gallery}}" as="g">
+      <div class="bw"><img class="img" src="{{g.img}}" alt="{{g.alt}}" loading="lazy"></div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÃO + OUTRAS ============ -->
+<section class="sec">
+  <div class="wrap" style="display:grid;gap:80px">
+    <figure style="background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:clamp(28px,5cqw,56px);display:grid;gap:18px">
+      <svg width="48" height="38" viewBox="0 0 56 44" aria-hidden="true"><path fill="var(--yellow)" d="M0 44V26C0 12 7 3 21 0l3 6c-8 3-12 8-12 15h11v23zm32 0V26c0-14 7-23 21-26l3 6c-8 3-12 8-12 15h11v23z"/></svg>
+      <blockquote style="margin:0;font-size:clamp(22px,3cqw,28px);line-height:1.35;font-weight:700"><span class="ph">[Avaliação real desta unidade no Google]</span></blockquote>
+      <figcaption style="color:var(--mute)"><b class="y"><span class="ph">[Nome do aluno]</span></b> · Google</figcaption>
+    </figure>
+    <div>
+      <h2 class="tk h2">Outras <span class="y">unidades</span></h2>
+      <div style="margin-top:28px;border-bottom:1px solid var(--line)">
+        <sc-for list="{{others}}" as="o">
+          <a class="row" href="{{o.href}}" style="text-decoration:none">
+            <b class="tk y" style="font-size:clamp(48px,5cqw,64px);line-height:.88">{{o.name}}</b>
+            <span style="color:var(--mute)">Teresina-PI · aberta até as 22:00</span>
+            <span class="btn btn-o btn-sm" style="pointer-events:none">Ver unidade <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#050507;padding:0 0 clamp(72px,10cqw,112px)">
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--line);padding-top:clamp(48px,6cqw,72px)">
+    <h2 class="tk" style="font-size:clamp(60px,10cqw,104px);line-height:.85">Bora treinar<br><span class="y">na {{unit.name}}?</span></h2>
+    <a class="btn btn-y" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula experimental <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  </div>
+</section>
+</main>
+
+<footer style="background:#050507;color:#C9CBD6;border-top:1px solid var(--line)">
+  <div class="wrap" style="padding-top:26px;padding-bottom:26px;font-size:13px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center">
+    <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+    <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span>
+    <a href="{{home}}" style="font-weight:800;color:#fff;padding:8px 0">Voltar para a página inicial</a>
+  </div>
+</footer>
+
+<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 12px;gap:8px;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--line)">
+  <a class="btn btn-y btn-sm" href="{{unit.wa}}" target="_blank" rel="noopener" style="padding:0 8px">Agendar</a>
+  <a class="btn btn-o btn-sm" href="{{unit.map}}" target="_blank" rel="noopener" style="padding:0 8px">Mapa</a>
+  <a class="btn btn-o btn-sm" href="{{unit.tel}}" style="padding:0 8px">Ligar</a>
+</div>
+
+</div>
