@@ -67,7 +67,7 @@ html[data-variant="d"] { --fab-bg: #FFC400; --fab-fg: #050507; --fab-ring: #fff;
 
 /* ---------- Seletor de layout do protótipo (recolhido por padrão) ---------- */
 .proto { position: fixed; left: 12px; bottom: 12px; z-index: 80; color: #fff; font: 700 12px/1 system-ui, -apple-system, 'Segoe UI', sans-serif; }
-.proto summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; list-style: none; cursor: pointer; background: rgba(11, 11, 15, .94); border: 1px solid rgba(255, 255, 255, .26); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+.proto summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px; border-radius: 999px; list-style: none; cursor: pointer; background: rgba(11, 11, 15, .94); border: 1px solid rgba(255, 255, 255, .26); box-shadow: 0 12px 30px rgba(0, 0, 0, .4); letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
 .proto summary::-webkit-details-marker { display: none; }
 .proto summary b { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #FFC400; color: #0B0B0F; font-size: 12px; }
 .proto summary:focus-visible, .proto a:focus-visible { outline: 2px solid #FFC400; outline-offset: 2px; }
@@ -213,3 +213,6 @@ html[data-variant="a"] .lg-sec{background:#FFFBEF;color:#0B0B0F}
 html[data-variant="a"] .lg-sec .ph{color:#0B0B0F}
 html[data-variant="d"] header a.hide-m.y{white-space:nowrap}
 @media (max-width:1400px){html[data-variant="d"] header a.hide-m.y{display:none}}
+
+/* Alvo de toque: o link "Início" do breadcrumb tinha 36 px de largura (mínimo 44). */
+nav[aria-label="Você está em"] a { min-width: 44px; }
