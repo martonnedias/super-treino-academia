@@ -216,3 +216,24 @@ html[data-variant="d"] header a.hide-m.y{white-space:nowrap}
 
 /* Alvo de toque: o link "Início" do breadcrumb tinha 36 px de largura (mínimo 44). */
 nav[aria-label="Você está em"] a { min-width: 44px; }
+
+/* ---------- Refinamentos de movimento (inspirados no catálogo naocodei.com: 25, 07, 30) ---------- */
+/* Transição suave entre páginas (View Transitions entre documentos; navegadores sem suporte ignoram). */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; animation-timing-function: ease-out; }
+}
+/* Onda no clique: confirma o toque nos botões. */
+.btn { position: relative; overflow: hidden; }
+.fx-ripple { position: absolute; border-radius: 50%; pointer-events: none; background: currentColor; opacity: .22; transform: scale(0); animation: fx-ripple .6s ease-out forwards; }
+@keyframes fx-ripple { to { transform: scale(1); opacity: 0; } }
+/* Pulso no botão de WhatsApp: um anel que se expande de tempos em tempos, parado no hover/foco. */
+@media (prefers-reduced-motion: no-preference) {
+  .wa-btn { animation: fx-ring 3.2s ease-out 1.5s infinite; }
+  .wa-btn:hover, .wa-btn:focus-visible, .wa-btn[aria-expanded="true"] { animation: none; }
+}
+@keyframes fx-ring {
+  0%, 70%, 100% { box-shadow: 0 16px 34px rgba(0, 0, 0, .38), 0 2px 6px rgba(0, 0, 0, .28), 0 0 0 0 rgba(255, 196, 0, 0); }
+  75% { box-shadow: 0 16px 34px rgba(0, 0, 0, .38), 0 2px 6px rgba(0, 0, 0, .28), 0 0 0 0 rgba(255, 196, 0, .5); }
+  95% { box-shadow: 0 16px 34px rgba(0, 0, 0, .38), 0 2px 6px rgba(0, 0, 0, .28), 0 0 0 16px rgba(255, 196, 0, 0); }
+}

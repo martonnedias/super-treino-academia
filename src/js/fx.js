@@ -121,6 +121,22 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && d.open) { d.open = false; $('summary', d)?.focus(); } });
   });
 
+  /* ---------- Onda no clique nos botões ---------- */
+  if (!reduce) {
+    document.addEventListener('pointerdown', (e) => {
+      const b = e.target.closest('.btn');
+      if (!b) return;
+      const r = b.getBoundingClientRect();
+      const d = Math.max(r.width, r.height) * 2;
+      const w = document.createElement('span');
+      w.className = 'fx-ripple';
+      w.setAttribute('aria-hidden', 'true');
+      w.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`;
+      b.appendChild(w);
+      w.addEventListener('animationend', () => w.remove());
+    }, { passive: true });
+  }
+
   /* ---------- Eventos de conversão (GA4 / GTM, se instalados) ---------- */
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href]');
