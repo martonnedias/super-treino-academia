@@ -15,9 +15,9 @@
 <meta property="og:image" content="../../img/aluna-halter.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="../../fonts/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/_Xms-HUzqDCFdgfMm4S9DQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../css/fonts.css">
 <link rel="stylesheet" href="../../css/a-home.css">
 <link rel="stylesheet" href="../../css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -66,7 +66,7 @@
     </div>
     <div style="position:relative">
       <div class="print" style="transform:rotate(2deg)">
-        <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="../../img/turma-comemorando.jpg" alt="Alunos de várias idades batendo as mãos e rindo depois do treino" style="object-position:55% 30%"></div>
+        <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="../../img/turma-comemorando.webp" alt="Alunos de várias idades batendo as mãos e rindo depois do treino" style="object-position:55% 30%" fetchpriority="high" decoding="async"></div>
         <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Super Treino · Teresina</p>
       </div>
       <div aria-hidden="true" style="position:absolute;left:-18px;bottom:-18px;width:52%;height:26%;background:var(--yellow);border-radius:18px;z-index:-1;transform:rotate(-4deg)"></div>
@@ -105,7 +105,7 @@
 
 <section class="sec" style="background:var(--ink);color:#fff">
   <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:40px 64px;align-items:center">
-    <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../../img/danca-confete.jpg" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy"></div>
+    <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../../img/danca-confete.webp" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy"></div>
     <div style="display:grid;gap:18px;justify-items:start">
       <h2 class="dsp h2" style="font-size:clamp(48px,9cqw,80px)"><span style="color:var(--yellow)">Nossa</span> história</h2>
       <p style="font-size:18px;color:#E9EBF3;max-width:30em"><span class="ph">[história da academia: ano de fundação, nome do proprietário e como tudo começou]</span></p>
@@ -159,7 +159,7 @@
   </div>
   <div style="border-top:1px solid rgba(255,255,255,.16)">
     <div class="wrap" style="padding-top:20px;padding-bottom:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between">
-      <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+      <a class="lnk-priv" href="../privacidade/">Política de privacidade</a><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
       <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais da academia</span>
       <span>Teresina · Piauí</span>
     </div>

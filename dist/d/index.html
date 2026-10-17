@@ -15,9 +15,9 @@
 <meta property="og:image" content="../img/aluna-halter.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="../fonts/LYjNdG7kmE0gfaN9pQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/xn7gYHE41ni1AdIRggexSg.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="../css/d-home.css">
 <link rel="stylesheet" href="../css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -60,7 +60,7 @@
 <!-- ============ HERO ============ -->
 <section style="position:relative;background:#050507;overflow:hidden">
   <div style="position:absolute;inset:0">
-    <img class="img hero-img" src="../img/aluna-pb.jpg" alt="Aluna sorrindo enquanto treina com halter, em preto e branco" style="object-position:78% 30%">
+    <img class="img hero-img" src="../img/aluna-pb.webp" alt="Aluna sorrindo enquanto treina com halter, em preto e branco" style="object-position:78% 30%" fetchpriority="high" decoding="async">
   </div>
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to right,#050507 18%,rgba(5,5,7,.75) 42%,rgba(5,5,7,0) 70%)"></div>
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,#050507 4%,rgba(5,5,7,0) 40%)"></div>
@@ -133,7 +133,7 @@
   <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:48px 64px;align-items:center">
     <div style="position:relative;background:var(--yellow);border-radius:4px;aspect-ratio:1/1;overflow:hidden">
       <p class="tk outline" aria-hidden="true" style="position:absolute;left:-4%;right:-4%;bottom:6%;font-size:clamp(84px,13cqw,150px);line-height:.8;white-space:nowrap;text-align:center">Dança</p>
-      <img src="../img/aluna-pulando.jpg" alt="Aluna pulando e rindo durante a aula de dança" style="position:absolute;inset:4% 8% 0;width:84%;height:96%;object-fit:contain;object-position:50% 100%;mix-blend-mode:multiply;filter:contrast(1.15)">
+      <img src="../img/aluna-pulando.webp" alt="Aluna pulando e rindo durante a aula de dança" style="position:absolute;inset:4% 8% 0;width:84%;height:96%;object-fit:contain;object-position:50% 100%;mix-blend-mode:multiply;filter:contrast(1.15)" loading="lazy" decoding="async">
     </div>
     <div style="display:grid;gap:22px;justify-items:start;position:relative">
       <svg class="spin hide-m" viewBox="0 0 120 120" width="120" height="120" aria-hidden="true" style="position:absolute;right:0;top:-24px">
@@ -219,14 +219,14 @@
 <section style="background:#050507;padding:clamp(72px,10cqw,128px) 0">
   <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:24px">
     <a href="#unidades" class="bw" style="position:relative;overflow:hidden;background:var(--yellow);color:#050507;border-radius:4px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;text-decoration:none">
-      <img class="img" src="../img/turma-comemorando.jpg" alt="" style="position:absolute;inset:0;mix-blend-mode:multiply;opacity:.45">
+      <img class="img" src="../img/turma-comemorando.webp" alt="" style="position:absolute;inset:0;mix-blend-mode:multiply;opacity:.45" loading="lazy" decoding="async">
       <div style="position:relative;display:grid;gap:12px;justify-items:start">
         <h3 class="tk" style="font-size:52px;max-width:8em">Venha conhecer com uma aula experimental</h3>
         <span class="btn btn-k btn-sm">Agendar <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
       </div>
     </a>
     <a href="unidades/itarare/#horarios" class="bw" style="position:relative;overflow:hidden;background:var(--blue);color:#fff;border-radius:4px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;text-decoration:none">
-      <img class="img" src="../img/esteiras.jpg" alt="" style="position:absolute;inset:0;mix-blend-mode:multiply;opacity:.6">
+      <img class="img" src="../img/esteiras.webp" alt="" style="position:absolute;inset:0;mix-blend-mode:multiply;opacity:.6" loading="lazy" decoding="async">
       <div style="position:relative;display:grid;gap:12px;justify-items:start">
         <h3 class="tk" style="font-size:52px;max-width:8em">Até as 22:00 nos dias úteis: veja os horários</h3>
         <span class="btn btn-y btn-sm">Ver horários <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
@@ -245,11 +245,11 @@
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
       <a class="bw" href="#aulas" style="display:grid;gap:14px;text-decoration:none">
-        <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img class="img" src="../img/funcional.jpg" alt="Turma de funcional treinando" loading="lazy"></span>
+        <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img class="img" src="../img/funcional.webp" alt="Turma de funcional treinando" loading="lazy"></span>
         <span style="display:flex;justify-content:space-between;align-items:center"><b class="tk y" style="font-size:32px">Funcional</b><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
       </a>
       <a class="bw" href="#unidades" style="display:grid;gap:14px;text-decoration:none;margin-top:48px">
-        <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img class="img" src="../img/instrutor.jpg" alt="Instrutor acompanhando um aluno na musculação" loading="lazy"></span>
+        <span style="display:block;aspect-ratio:3/4;overflow:hidden;border-radius:4px"><img class="img" src="../img/instrutor.webp" alt="Instrutor acompanhando um aluno na musculação" loading="lazy"></span>
         <span style="display:flex;justify-content:space-between;align-items:center"><b class="tk y" style="font-size:32px">Musculação</b><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--yellow)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></span>
       </a>
     </div>
@@ -260,11 +260,11 @@
 <section style="background:#050507">
   <div class="wrap" style="padding-bottom:32px"><h2 class="tk h2">Quem treina <span class="y">aqui</span></h2></div>
   <div class="strip">
-    <div class="bw"><img class="img" src="../img/turma-comemorando.jpg" alt="Alunos comemorando o fim do treino" loading="lazy"></div>
-    <div class="bw"><img class="img" src="../img/aluna-halter.jpg" alt="Aluna sorrindo na musculação" loading="lazy"></div>
-    <div class="bw"><img class="img" src="../img/danca-confete.jpg" alt="Turma da aula de dança" loading="lazy" style="object-position:55% 50%"></div>
-    <div class="bw"><img class="img" src="../img/pesos-livres.jpg" alt="Aluno treinando com halteres" loading="lazy" style="object-position:80% 50%"></div>
-    <div class="bw"><img class="img" src="../img/sala-musculacao.jpg" alt="Sala de musculação ampla" loading="lazy"></div>
+    <div class="bw"><img class="img" src="../img/turma-comemorando.webp" alt="Alunos comemorando o fim do treino" loading="lazy"></div>
+    <div class="bw"><img class="img" src="../img/aluna-halter.webp" alt="Aluna sorrindo na musculação" loading="lazy"></div>
+    <div class="bw"><img class="img" src="../img/danca-confete.webp" alt="Turma da aula de dança" loading="lazy" style="object-position:55% 50%"></div>
+    <div class="bw"><img class="img" src="../img/pesos-livres.webp" alt="Aluno treinando com halteres" loading="lazy" style="object-position:80% 50%"></div>
+    <div class="bw"><img class="img" src="../img/sala-musculacao.webp" alt="Sala de musculação ampla" loading="lazy"></div>
   </div>
 </section>
 
@@ -274,7 +274,7 @@
     <h2 class="tk h2">O que dizem os alunos</h2>
     <div data-quotes style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px;align-items:center">
       <div class="bw" style="aspect-ratio:4/5;overflow:hidden;border-radius:4px;position:relative">
-        <img class="img" data-q="0"  src="../img/aluna-halter.jpg" alt="" loading="lazy" style="position:absolute;inset:0"><img class="img" data-q="1" hidden src="../img/turma-comemorando.jpg" alt="" loading="lazy" style="position:absolute;inset:0"><img class="img" data-q="2" hidden src="../img/instrutor.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+        <img class="img" data-q="0"  src="../img/aluna-halter.webp" alt="" loading="lazy" style="position:absolute;inset:0"><img class="img" data-q="1" hidden src="../img/turma-comemorando.webp" alt="" loading="lazy" style="position:absolute;inset:0"><img class="img" data-q="2" hidden src="../img/instrutor.webp" alt="" loading="lazy" style="position:absolute;inset:0">
       </div>
       <div style="display:grid;gap:22px;align-content:center">
         
@@ -398,7 +398,7 @@
       <a href="#unidades" style="padding:6px 0">Unidades</a><a href="#planos" style="padding:6px 0">Planos</a><a href="#aulas" style="padding:6px 0">Aulas</a><a href="./quem-somos/" style="padding:6px 0">Quem somos</a><a href="./equipe/" style="padding:6px 0">Equipe</a><a href="./aula-experimental/" style="padding:6px 0">Aula experimental</a><a href="#duvidas" style="padding:6px 0">Dúvidas</a>
     </div>
   </div>
-  <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:18px;padding-bottom:18px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span><span>Teresina · Piauí</span></div></div>
+  <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:18px;padding-bottom:18px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><a class="lnk-priv" href="./privacidade/">Política de privacidade</a><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span><span>Teresina · Piauí</span></div></div>
 </footer>
 
 <nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">

@@ -15,9 +15,9 @@
 <meta property="og:image" content="../../../img/aluna-halter.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="../../../fonts/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../../fonts/_Xms-HUzqDCFdgfMm4S9DQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../../css/fonts.css">
 <link rel="stylesheet" href="../../../css/a-unit.css">
 <link rel="stylesheet" href="../../../css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -89,7 +89,7 @@
       </div>
       <div style="position:relative">
         <div class="print" style="transform:rotate(2deg)">
-          <div class="frame" style="aspect-ratio:4/3;border-radius:2px"><img class="img" src="../../../img/esteiras.jpg" alt="Área de esteiras e bicicletas ao entardecer"></div>
+          <div class="frame" style="aspect-ratio:4/3;border-radius:2px"><img class="img" src="../../../img/esteiras.webp" alt="Área de esteiras e bicicletas ao entardecer" fetchpriority="high" decoding="async"></div>
           <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Unidade Parque Jurema</p>
         </div>
         <div class="stamp" style="position:absolute;right:-14px;top:-34px">
@@ -318,7 +318,7 @@
 
 <footer style="background:var(--ink);color:#D9DDEB">
   <div class="wrap" style="padding-top:40px;padding-bottom:40px;display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;font-size:14px">
-    <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+    <a class="lnk-priv" href="../../privacidade/">Política de privacidade</a><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
     <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span>
     <a href="../../" style="font-weight:800;color:#fff;padding:8px 0">Voltar para a página inicial</a>
   </div>

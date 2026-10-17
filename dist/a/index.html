@@ -15,9 +15,9 @@
 <meta property="og:image" content="../img/aluna-halter.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="../fonts/fC1_PZJEZG-e9gHhdI4-NBbfd2ys3SjJCx1czNDu.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/_Xms-HUzqDCFdgfMm4S9DQ.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/fonts.css">
 <link rel="stylesheet" href="../css/a-home.css">
 <link rel="stylesheet" href="../css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -110,7 +110,7 @@
 
       <div class="g-photo" style="position:relative">
         <div class="print" style="transform:rotate(2.5deg)">
-          <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="../img/aluna-halter.jpg" alt="Aluna sorrindo enquanto treina com halter, parede amarela e aparelhos azuis ao fundo" style="object-position:50% 30%"></div>
+          <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="../img/aluna-halter.webp" alt="Aluna sorrindo enquanto treina com halter, parede amarela e aparelhos azuis ao fundo" style="object-position:50% 30%" fetchpriority="high" decoding="async"></div>
           <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Super Treino · Teresina</p>
         </div>
         <div aria-hidden="true" style="position:absolute;left:-18px;bottom:-18px;width:52%;height:26%;background:var(--yellow);border-radius:18px;z-index:-1;transform:rotate(-4deg)"></div>
@@ -132,7 +132,7 @@
     <div style="margin-top:48px;display:grid">
       
         <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px 48px;align-items:center;padding:36px 0;border-top:2px solid var(--ink)">
-          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/pesos-livres.jpg" alt="Área de pesos livres com halteres e bancos azuis" loading="lazy"></div>
+          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/pesos-livres.webp" alt="Área de pesos livres com halteres e bancos azuis" loading="lazy"></div>
           <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
             <h3 class="dsp" style="font-size:clamp(56px,10cqw,88px);color:var(--blue)">Itararé</h3>
             <p style="color:var(--slate)">R. Antônio Neves de Melo, 4636 – Parque Ideal, Teresina-PI</p>
@@ -150,7 +150,7 @@
         </article>
       
         <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px 48px;align-items:center;padding:36px 0;border-top:2px solid var(--ink)">
-          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/esteiras.jpg" alt="Área de esteiras e bicicletas ao entardecer" loading="lazy"></div>
+          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/esteiras.webp" alt="Área de esteiras e bicicletas ao entardecer" loading="lazy"></div>
           <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
             <h3 class="dsp" style="font-size:clamp(56px,10cqw,88px);color:var(--blue)">Parque Jurema</h3>
             <p style="color:var(--slate)">R. Des. Antero Resende, 4344 – Extrema, Teresina-PI</p>
@@ -168,7 +168,7 @@
         </article>
       
         <article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:24px 48px;align-items:center;padding:36px 0;border-top:2px solid var(--ink)">
-          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/funcional.jpg" alt="Turma de funcional treinando junta" loading="lazy"></div>
+          <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="../img/funcional.webp" alt="Turma de funcional treinando junta" loading="lazy"></div>
           <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
             <h3 class="dsp" style="font-size:clamp(56px,10cqw,88px);color:var(--blue)">Renascença II</h3>
             <p style="color:var(--slate)">Rua José Almeida Coelho, Qd 43, Casa 32 – Conj. Renascença II, Teresina-PI</p>
@@ -202,9 +202,9 @@
       </div>
     </div>
     <div style="display:grid;gap:20px;grid-template-columns:1fr 1fr;align-items:start">
-      <div class="frame reveal" style="aspect-ratio:3/4;border-radius:22px"><img class="img" src="../img/instrutor.jpg" alt="Instrutor ajudando um aluno no aparelho" loading="lazy"></div>
-      <div class="frame reveal" style="aspect-ratio:3/4;border-radius:22px;margin-top:56px"><img class="img" src="../img/pesos-livres.jpg" alt="Halteres em frente à parede amarela" loading="lazy" style="object-position:30% 50%"></div>
-      <div class="frame reveal" style="aspect-ratio:16/9;border-radius:22px;grid-column:1 / -1"><img class="img" src="../img/sala-musculacao.jpg" alt="Sala de musculação ampla com muitos aparelhos" loading="lazy"></div>
+      <div class="frame reveal" style="aspect-ratio:3/4;border-radius:22px"><img class="img" src="../img/instrutor.webp" alt="Instrutor ajudando um aluno no aparelho" loading="lazy"></div>
+      <div class="frame reveal" style="aspect-ratio:3/4;border-radius:22px;margin-top:56px"><img class="img" src="../img/pesos-livres.webp" alt="Halteres em frente à parede amarela" loading="lazy" style="object-position:30% 50%"></div>
+      <div class="frame reveal" style="aspect-ratio:16/9;border-radius:22px;grid-column:1 / -1"><img class="img" src="../img/sala-musculacao.webp" alt="Sala de musculação ampla com muitos aparelhos" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -304,7 +304,7 @@
     <h2 class="dsp" style="font-size:clamp(64px,19cqw,96px);line-height:.88"><span style="color:var(--yellow)">Energia</span><br><span style="color:var(--orange)">&amp;</span> Diversão</h2>
     <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:48px;align-items:center">
       <div class="print" style="transform:rotate(-2.5deg);background:var(--orange)">
-        <div class="frame" style="aspect-ratio:5/4;border-radius:2px"><img class="img" src="../img/danca-confete.jpg" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy"></div>
+        <div class="frame" style="aspect-ratio:5/4;border-radius:2px"><img class="img" src="../img/danca-confete.webp" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy"></div>
         <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Energia &amp; Diversão</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:26px;align-items:flex-start">
@@ -377,32 +377,32 @@
     <div class="galA" style="margin-top:44px">
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: Treino com sorriso" style="aspect-ratio:9/16;margin-top:0px">
-          <img class="img" src="../img/aluna-halter.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/aluna-halter.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: A sala ampla" style="aspect-ratio:1/1;margin-top:40px">
-          <img class="img" src="../img/sala-musculacao.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/sala-musculacao.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: Aula de dança com confete" style="aspect-ratio:9/16;margin-top:0px">
-          <img class="img" src="../img/danca-confete.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/danca-confete.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: Turma reunida após a aula" style="aspect-ratio:1/1;margin-top:40px">
-          <img class="img" src="../img/turma-comemorando.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/turma-comemorando.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: Instrutor ajudando um aluno" style="aspect-ratio:4/5;margin-top:0px">
-          <img class="img" src="../img/instrutor.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/instrutor.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
         <a class="gcell" href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" aria-label="Foto no Instagram: Fim de tarde na esteira" style="aspect-ratio:9/16;margin-top:40px">
-          <img class="img" src="../img/esteiras.jpg" alt="" loading="lazy" style="position:absolute;inset:0">
+          <img class="img" src="../img/esteiras.webp" alt="" loading="lazy" style="position:absolute;inset:0">
           
         </a>
       
@@ -531,7 +531,7 @@
   </div>
   <div style="border-top:1px solid rgba(255,255,255,.16)">
     <div class="wrap" style="padding-top:20px;padding-bottom:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between">
-      <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+      <a class="lnk-priv" href="./privacidade/">Política de privacidade</a><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
       <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais da academia</span>
       <span>Teresina · Piauí</span>
     </div>

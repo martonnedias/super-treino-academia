@@ -35,8 +35,8 @@ html[data-variant="d"] .map-embed { filter: invert(.92) hue-rotate(180deg) satur
   .js .fx-split.fx-in .fx-wi { translate: 0 0; }
 
   /* Paralaxe: --sy é atualizado pelo script a cada rolagem */
-  html[data-variant="c"] .fx-par,
-  html[data-variant="d"] .fx-par { height: calc(100% + 90px); margin-top: -90px; translate: 0 min(90px, calc(var(--sy, 0) * .08px)); }
+  html[data-variant="c"] .fx-par, html[data-variant="c"] .kb,
+  html[data-variant="d"] .fx-par, html[data-variant="d"] .hero-img { height: calc(100% + 90px); margin-top: -90px; translate: 0 min(90px, calc(var(--sy, 0) * .08px)); }
   html[data-variant="a"] .fx-par { translate: 0 max(-70px, calc(var(--sy, 0) * -.05px)); }
 }
 .fx-w { display: inline-block; overflow: clip; vertical-align: top; padding: .14em .07em .1em; margin: -.14em -.07em -.1em; }
@@ -200,3 +200,16 @@ footer li a, footer div > a, footer a[href*="instagram.com"] { display: inline-f
 main a[style*="padding:8px 0"], main a[style*="padding:6px 0"] { display: inline-flex; align-items: center; min-height: 44px; }
 main a[href*="depoimentos"][style*="border-radius:999px"] { min-height: 44px; }
 .map-embed:focus-visible { outline: 3px solid #FFC400; outline-offset: 3px; }
+
+/* ---------- Páginas de apoio (privacidade, 404) e link do rodapé ---------- */
+.lg{display:grid;gap:14px;max-width:46rem;font-size:17px;line-height:1.65}
+.lg h2{font-size:clamp(22px,3.2cqw,30px);margin:22px 0 0;line-height:1.15}
+.lg p{margin:0}
+.lg-h1{margin:0;font-size:clamp(40px,7cqw,76px);line-height:.95}
+.lg-meta{opacity:.8;font-size:15px}
+.lg a:not(.btn){text-decoration:underline}
+.lnk-priv{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+html[data-variant="a"] .lg-sec{background:#FFFBEF;color:#0B0B0F}
+html[data-variant="a"] .lg-sec .ph{color:#0B0B0F}
+html[data-variant="d"] header a.hide-m.y{white-space:nowrap}
+@media (max-width:1400px){html[data-variant="d"] header a.hide-m.y{display:none}}

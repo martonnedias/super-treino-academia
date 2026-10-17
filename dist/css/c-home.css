@@ -19,7 +19,7 @@ body{margin:0}
   @keyframes rv{from{transform:scale(1.16)}to{transform:scale(1)}}
 }
 .grain{position:relative;isolation:isolate}
-.grain::before{content:"";position:absolute;inset:0;z-index:-1;background:url(../img/grain.png) repeat;background-size:256px;mix-blend-mode:overlay;opacity:.55;pointer-events:none}
+.grain::before{content:"";position:absolute;inset:0;z-index:-1;background:url(../img/grain.webp) repeat;background-size:256px;mix-blend-mode:overlay;opacity:.55;pointer-events:none}
 .peek{position:absolute;left:44%;top:50%;width:200px;aspect-ratio:4/5;object-fit:cover;border-radius:6px;opacity:0;transform:translate(-50%,-50%) rotate(-5deg) scale(.86);transition:opacity .35s,transform .5s cubic-bezier(.16,1,.3,1);pointer-events:none;box-shadow:0 30px 60px rgba(0,0,0,.45);z-index:2}
 .orow:hover .peek{opacity:1;transform:translate(-50%,-50%) rotate(-5deg) scale(1)}
 .gcell{position:relative;overflow:hidden;aspect-ratio:4/5}

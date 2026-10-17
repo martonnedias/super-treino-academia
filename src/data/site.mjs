@@ -45,9 +45,9 @@ export const units = [
     satNote: 'Sábado: 8:00 às 12:00 e a partir das 16:00',
     dance: { days: [1, 3], time: '19:00' }, // índice 0 = Seg ... ter=1, qui=3
     images: {
-      a: ['pesos-livres.jpg', 'Área de pesos livres com halteres e bancos azuis'],
-      c: ['pesos-livres.jpg', 'Área de pesos livres com halteres e bancos azuis'],
-      d: ['pesos-livres.jpg', 'Área de pesos livres com halteres e bancos azuis'],
+      a: ['pesos-livres.webp', 'Área de pesos livres com halteres e bancos azuis'],
+      c: ['pesos-livres.webp', 'Área de pesos livres com halteres e bancos azuis'],
+      d: ['pesos-livres.webp', 'Área de pesos livres com halteres e bancos azuis'],
     },
   },
   {
@@ -69,9 +69,9 @@ export const units = [
     satNote: 'Sábado: 16:00 às 19:30',
     dance: { days: [0, 2], time: '19:20' },
     images: {
-      a: ['esteiras.jpg', 'Área de esteiras e bicicletas ao entardecer'],
-      c: ['esteiras.jpg', 'Área de esteiras e bicicletas ao entardecer'],
-      d: ['esteiras.jpg', 'Área de esteiras e bicicletas ao entardecer'],
+      a: ['esteiras.webp', 'Área de esteiras e bicicletas ao entardecer'],
+      c: ['esteiras.webp', 'Área de esteiras e bicicletas ao entardecer'],
+      d: ['esteiras.webp', 'Área de esteiras e bicicletas ao entardecer'],
     },
   },
   {
@@ -93,9 +93,9 @@ export const units = [
     satNote: 'Sábado: 16:00 às 19:30',
     dance: { days: [0, 2], time: '18:20' },
     images: {
-      a: ['funcional.jpg', 'Turma de funcional treinando junta'],
-      c: ['instrutor.jpg', 'Instrutor ajudando um aluno no aparelho'],
-      d: ['instrutor.jpg', 'Instrutor ajudando um aluno no aparelho'],
+      a: ['funcional.webp', 'Turma de funcional treinando junta'],
+      c: ['instrutor.webp', 'Instrutor ajudando um aluno no aparelho'],
+      d: ['instrutor.webp', 'Instrutor ajudando um aluno no aparelho'],
     },
   },
 ];

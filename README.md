@@ -34,7 +34,9 @@ Gera em `dist/` **só o layout escolhido na raiz do site**, sem a tela de escolh
 | Endereço, telefone, WhatsApp, notas, horários de sábado, dias de dança | `src/data/site.mjs` |
 | Preços dos planos | `src/data/site.mjs` (lista `plans`) |
 | Perguntas frequentes | `src/data/site.mjs` (lista `faq`) |
-| Fotos | troque os arquivos de `src/img/` mantendo o nome |
+| Fotos | troque os arquivos `.webp` de `src/img/` mantendo o nome (largura de 1200 px, qualidade 75). `aluna-halter.jpg` é a imagem de compartilhamento (WhatsApp/Facebook) |
+| Política de privacidade | `LEGAL` em `build.mjs` (revisar com responsável legal) |
+| Fontes | `node scripts/fetch-fonts.mjs` baixa de novo para `src/fonts/` (já hospedadas no site) |
 | Textos e seções de um layout | `src/tpl/<layout>-home.html` e `src/tpl/<layout>-unit.html` |
 | Cores, tipografia e efeitos | `src/css/` (`fx.css` é a camada de efeitos, `fx.js` os scripts) |
 
@@ -57,7 +59,9 @@ Depois de editar, rode `npm run build`. Textos entre colchetes (`[assim]`) apare
 - Eventos de conversão `contact_click` (WhatsApp, ligar, rota) enviados ao `dataLayer`, prontos para GA4/GTM por unidade. Nenhum cookie é criado hoje; ao instalar analytics, adicione aviso de cookies e página de privacidade (LGPD).
 - SEO local: título e descrição próprios por unidade, dados estruturados `HealthClub` com o mesmo nome, endereço e telefone do Google Meu Negócio.
 - Acessibilidade (WCAG 2.1/2.2 AA, auditada com axe-core: 0 violações no computador e no celular): link "pular para o conteúdo", marcos de página, foco visível em tudo que recebe Tab, alvos de toque de 44 px, botões com nome completo (unidade ou plano) e aviso de "abre em nova aba", letreiro com botão de pausa, rolagem horizontal alcançável pelo teclado, formulário com erro anunciado, sem rolagem lateral até 320 px, e `prefers-reduced-motion` desliga os efeitos de movimento.
-- Cabeçalhos de segurança e cache em `vercel.json`.
+- Cabeçalhos de segurança (HSTS, CSP, nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy) e cache em `vercel.json` e `_headers` (Netlify/Cloudflare). **GitHub Pages não aplica cabeçalhos**: para tê-los, publique em Vercel, Netlify ou Cloudflare Pages.
+- Fontes e imagens hospedadas no próprio site (WebP), sem chamadas ao Google Fonts (LGPD e velocidade). Páginas de Política de privacidade e 404.
+- Lighthouse mobile (local, simulado): desempenho 94 a 100, acessibilidade 100, boas práticas 100, SEO 100 na versão final; CLS 0.
 
 ## Publicar
 

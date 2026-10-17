@@ -21,18 +21,21 @@ if (FINAL && !['a', 'c', 'd'].includes(FINAL)) throw new Error('--final deve ser
 
 const VARIANTS = {
   a: {
-    label: 'Opção A', nome: 'Ingresso de festa', theme: '#1E3FA8',
-    fonts: 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Figtree:wght@400;500;600;700;800&display=swap',
+    label: 'Opção A', nome: 'Ingresso de festa', theme: '#1E3FA8', families: ['Big Shoulders Display', 'Figtree'],
   },
   c: {
-    label: 'Opção C', nome: 'Noite', theme: '#0B0B0F',
-    fonts: 'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Albert+Sans:wght@400;500;600;700;800&display=swap',
+    label: 'Opção C', nome: 'Noite', theme: '#0B0B0F', families: ['Archivo', 'Albert Sans'],
   },
   d: {
-    label: 'Opção D', nome: 'Contraste', theme: '#050507',
-    fonts: 'https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap',
+    label: 'Opção D', nome: 'Contraste', theme: '#050507', families: ['Teko', 'Manrope'],
   },
 };
+
+// Fontes hospedadas no próprio site (scripts/fetch-fonts.mjs): sem chamada ao Google, sem salto de layout.
+const fontCss = readFileSync(path.join(SRC, 'css/fonts.css'), 'utf8');
+const fontFile = (fam) => fontCss.match(new RegExp(`font-family: '${fam}';[^}]*?url\\(\\.\\./fonts/([^)]+)\\)`))[1];
+const fontPreload = (v, root) => VARIANTS[v].families
+  .map((f) => `<link rel="preload" href="${root}fonts/${fontFile(f)}" as="font" type="font/woff2" crossorigin>`).join('\n');
 
 // ---------- utilitários ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -159,17 +162,17 @@ const faqCtx = () => faq.map((f, i) => ({
 // [descrição, proporção, deslocamento, arquivo]
 const GALLERY = {
   a: [
-    ['Treino com sorriso', '9/16', 0, 'aluna-halter.jpg'], ['A sala ampla', '1/1', 40, 'sala-musculacao.jpg'],
-    ['Aula de dança com confete', '9/16', 0, 'danca-confete.jpg'], ['Turma reunida após a aula', '1/1', 40, 'turma-comemorando.jpg'],
-    ['Instrutor ajudando um aluno', '4/5', 0, 'instrutor.jpg'], ['Fim de tarde na esteira', '9/16', 40, 'esteiras.jpg'],
+    ['Treino com sorriso', '9/16', 0, 'aluna-halter.webp'], ['A sala ampla', '1/1', 40, 'sala-musculacao.webp'],
+    ['Aula de dança com confete', '9/16', 0, 'danca-confete.webp'], ['Turma reunida após a aula', '1/1', 40, 'turma-comemorando.webp'],
+    ['Instrutor ajudando um aluno', '4/5', 0, 'instrutor.webp'], ['Fim de tarde na esteira', '9/16', 40, 'esteiras.webp'],
   ],
   c: [
-    ['A sala ampla', '4/5', 0, 'sala-musculacao.jpg'], ['Treino com sorriso', '4/5', 0, 'aluna-halter.jpg'],
-    ['Aula de funcional', '4/5', 0, 'funcional.jpg'], ['Energia & Diversão', '4/5', 0, 'danca-confete.jpg'],
+    ['A sala ampla', '4/5', 0, 'sala-musculacao.webp'], ['Treino com sorriso', '4/5', 0, 'aluna-halter.webp'],
+    ['Aula de funcional', '4/5', 0, 'funcional.webp'], ['Energia & Diversão', '4/5', 0, 'danca-confete.webp'],
   ],
   d: [
-    ['Sala de musculação ampla', '3/4', 0, 'sala-musculacao.jpg'], ['Aluna sorrindo na musculação', '3/4', 0, 'aluna-halter.jpg'],
-    ['Aluna treinando com halter', '3/4', 0, 'aluna-pb.jpg'], ['Aula de dança com confete', '3/4', 0, 'danca-confete.jpg'],
+    ['Sala de musculação ampla', '3/4', 0, 'sala-musculacao.webp'], ['Aluna sorrindo na musculação', '3/4', 0, 'aluna-halter.webp'],
+    ['Aluna treinando com halter', '3/4', 0, 'aluna-pb.webp'], ['Aula de dança com confete', '3/4', 0, 'danca-confete.webp'],
   ],
 };
 
@@ -187,7 +190,17 @@ const write = (rel, content) => {
   writeFileSync(p, content);
 };
 const jsonLd = (obj) => `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
-const polish = (html) => html
+// Primeira imagem da página (topo) carrega com prioridade; as demais ficam preguiçosas.
+const lazyImgs = (html) => {
+  let first = true;
+  return html.replace(/<img\b([^>]*)>/g, (m, attrs) => {
+    if (/\sloading=/.test(attrs)) { first = false; return m; }
+    const add = first ? ' fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"';
+    first = false;
+    return `<img${attrs}${add}>`;
+  });
+};
+const polish = (html) => lazyImgs(html)
   .replace(/>4,7</g, '><em class="num" data-count="4.7" data-dec="1">4,7</em><')
   .replace('<main>', '<main id="conteudo">');
 
@@ -213,9 +226,8 @@ ${robots}${canonical}<meta name="theme-color" content="${meta.theme}">
 <meta property="og:image" content="${ogImg}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="${root}favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${meta.fonts}">
+${fontPreload(v, root)}
+<link rel="stylesheet" href="${root}css/fonts.css">
 <link rel="stylesheet" href="${root}css/${v}-${cssKind}.css">
 <link rel="stylesheet" href="${root}css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -260,7 +272,7 @@ function buildHome(v) {
     })),
     quotes: [0, 1, 2].map((i) => ({
       i, hidden: i === 0 ? '' : 'hidden', unit: units[i].name,
-      img: `${root}img/${['aluna-halter.jpg', 'turma-comemorando.jpg', 'instrutor.jpg'][i]}`,
+      img: `${root}img/${['aluna-halter.webp', 'turma-comemorando.webp', 'instrutor.webp'][i]}`,
     })),
     reviewsTotal: String(brand.reviews),
   };
@@ -289,7 +301,7 @@ function buildUnit(v, u) {
     home: dirUrl(dir, vdir(v)),
     unit: me, units: all, others: all.filter((x) => x.slug !== u.slug),
     plans: planCtx(u), days: me.days,
-    gallery: GALLERY[v].map(([alt, , , f]) => ({ img: `${root}img/${f}`, alt, pos: f === 'aluna-pb.jpg' ? '80% 30%' : '50% 50%' })),
+    gallery: GALLERY[v].map(([alt, , , f]) => ({ img: `${root}img/${f}`, alt, pos: f === 'aluna-pb.webp' ? '80% 30%' : '50% 50%' })),
     plansNote: u.slug === 'itarare' ? ph('confirmar se os valores seguem vigentes') : ph('valores de Itararé como referência; confirmar nesta unidade'),
   };
   const html = polish(render(read(`tpl/${v}-unit.html`), scope, `${v}-unit`));
@@ -385,9 +397,8 @@ function buildChooser() {
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0B0B0F">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;600;700&display=swap">
+${fontPreload('a', '')}
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/choose.css">
 </head>
 <body>
@@ -414,10 +425,55 @@ function buildChooser() {
 // ---------- saída ----------
 rmSync(DIST, { recursive: true, force: true });
 mkdirSync(DIST, { recursive: true });
-for (const d of ['img', 'css', 'js', 'previews']) cpSync(path.join(SRC, d), path.join(DIST, d), { recursive: true });
+for (const d of ['img', 'css', 'js', 'previews', 'fonts']) cpSync(path.join(SRC, d), path.join(DIST, d), { recursive: true });
 cpSync(path.join(SRC, 'static'), DIST, { recursive: true });
 
 const targets = FINAL ? [FINAL] : Object.keys(VARIANTS);
+
+// Páginas de apoio (privacidade e 404): reaproveitam cabeçalho e rodapé do template da equipe.
+const LEGAL = `
+<section class="sec lg-sec" style="padding-top:clamp(48px,8cqw,96px)"><div class="wrap lg">
+<h1 class="lg-h1">Política de privacidade</h1>
+<p class="lg-meta">Última atualização: ${new Date().toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}. ${ph('revisar com o responsável legal antes de publicar')}</p>
+<h2>Quem somos</h2>
+<p>A Super Treino Academia (CNPJ ${ph('00.000.000/0000-00')}), com unidades em Teresina-PI, é a responsável pelos dados tratados neste site, nos termos da Lei Geral de Proteção de Dados (Lei 13.709/2018). Contato do responsável: ${ph('e-mail para assuntos de privacidade')}.</p>
+<h2>Que dados coletamos</h2>
+<p>Só os que você digita no formulário de aula experimental: nome, telefone, unidade e horário preferido. Eles <b>não são gravados em servidor nosso</b>: o site monta a mensagem e abre o seu WhatsApp para você enviá-la. A partir do envio, a conversa passa a seguir as regras do WhatsApp e do atendimento da unidade.</p>
+<h2>Para que usamos</h2>
+<p>Para responder ao seu pedido de aula experimental e combinar horário. Base legal: procedimentos preliminares a contrato, a seu pedido (art. 7º, V) e legítimo interesse no atendimento (art. 7º, IX).</p>
+<h2>Cookies e medição</h2>
+<p>Este site não usa cookies de publicidade nem de rastreamento. As fontes e imagens são servidas pelo próprio site, sem chamadas ao Google Fonts. O mapa de cada unidade é um incorporado do Google Maps e só é carregado ao abrir a página da unidade; o Google pode registrar a visita conforme a política dele. Se passarmos a usar ferramentas de medição (como Google Analytics), elas só serão ativadas depois do seu aceite em um aviso de cookies.</p>
+<h2>Compartilhamento</h2>
+<p>Não vendemos nem compartilhamos seus dados. Podem receber dados, apenas para operar o serviço: WhatsApp (Meta) e a hospedagem do site.</p>
+<h2>Seus direitos</h2>
+<p>Você pode pedir confirmação de tratamento, acesso, correção, anonimização, exclusão e informações sobre compartilhamento (art. 18). Escreva para ${ph('e-mail do responsável')} ou fale com a recepção de qualquer unidade. Também pode reclamar à Autoridade Nacional de Proteção de Dados (gov.br/anpd).</p>
+<h2>Por quanto tempo guardamos</h2>
+<p>Dados de atendimento pelo WhatsApp ficam pelo tempo necessário para responder e para obrigações legais; depois são apagados. ${ph('confirmar prazo com a academia')}</p>
+</div></section>`;
+const NOTFOUND = `
+<section class="sec lg-sec" style="padding-top:clamp(48px,8cqw,96px)"><div class="wrap lg" style="justify-items:start">
+<h1 class="lg-h1">Página não encontrada</h1>
+<p>O endereço que você abriu não existe mais ou foi digitado errado. Volte ao início ou agende sua aula experimental.</p>
+<p><a class="btn btn-y" href="{{home}}">Voltar ao início</a> <a class="btn btn-k" href="{{home}}aula-experimental/">Agendar aula experimental</a></p>
+</div></section>`;
+
+function buildSupport(v, slug, { title, desc, content, noindex }) {
+  const dir = slug ? path.join(vdir(v), slug) : vdir(v);
+  const root = dirUrl(dir, '');
+  const ctxUnits = units.map((u) => unitCtx(u, v, dir, root));
+  const scope = { root, ...colors, home: dirUrl(dir, vdir(v)), units: ctxUnits };
+  const tpl = read(`tpl/${v}-team.html`);
+  const [head] = tpl.split('<main>');
+  const foot = tpl.slice(tpl.indexOf('</main>') + 7);
+  const html = polish(render(`${head}<main>${content}</main>${foot}`, scope, `${v}-${slug || '404'}`));
+  const file = slug ? path.join(dir, 'index.html') : path.join(vdir(v), '404.html');
+  write(file, shell({
+    v, kind: 'team', cssKind: 'home', dir, title, desc, ld: '',
+    body: `<div id="topo-wrap">${html}</div>`,
+    data: { kind: 'home', units: ctxUnits.map((u) => ({ name: u.name, wa: u.wa, tel: u.tel })) },
+  }).replace('<meta name="theme-color"', (noindex ? '<meta name="robots" content="noindex,follow">\n' : '') + (!slug && SITE_URL ? `<base href="${SITE_URL}/">\n` : '') + '<meta name="theme-color"'));
+}
+
 const urls = [];
 for (const v of targets) {
   buildHome(v);
@@ -432,8 +488,10 @@ for (const v of targets) {
     desc: 'Conheça os instrutores de cada unidade da Super Treino Academia em Teresina.',
     ld: jsonLd({ '@context': 'https://schema.org', '@type': 'WebPage', name: 'Equipe' }),
   });
+  buildSupport(v, 'privacidade', { title: 'Política de privacidade · Super Treino Academia', desc: 'Como a Super Treino Academia trata os dados do site, do formulário de aula experimental e do WhatsApp, conforme a LGPD.', content: LEGAL });
+  buildSupport(v, '', { title: 'Página não encontrada · Super Treino Academia', desc: 'Página não encontrada.', content: NOTFOUND, noindex: true });
   urls.push(vdir(v) ? `${vdir(v)}/` : '');
-  urls.push(`${path.join(vdir(v), 'quem-somos')}/`, `${path.join(vdir(v), 'aula-experimental')}/`, `${path.join(vdir(v), 'equipe')}/`);
+  urls.push(`${path.join(vdir(v), 'quem-somos')}/`, `${path.join(vdir(v), 'aula-experimental')}/`, `${path.join(vdir(v), 'equipe')}/`, `${path.join(vdir(v), 'privacidade')}/`);
   for (const u of units) { buildUnit(v, u); urls.push(`${unitDir(v, u)}/`); }
 }
 if (FINAL) {
