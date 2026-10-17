@@ -337,6 +337,27 @@ function protoNavAbout(v, dir) {
   return `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
 }
 
+// Páginas extras (formulário e equipe) com o mesmo cabeçalho/rodapé da home de cada layout.
+function buildPage(v, slug, { title, desc, ld }) {
+  const dir = path.join(vdir(v), slug);
+  const root = dirUrl(dir, '');
+  const ctxUnits = units.map((u) => unitCtx(u, v, dir, root));
+  const scope = {
+    root, ...colors,
+    home: dirUrl(dir, vdir(v)),
+    units: ctxUnits,
+    teamUnits: units.map((u) => ({ name: u.name, members: [1, 2, 3].map((n) => ({ n })) })),
+  };
+  const key = slug === 'aula-experimental' ? 'form' : 'team';
+  const html = polish(render(read(`tpl/${v}-${key}.html`), scope, `${v}-${key}`));
+  const nav = FINAL ? '' : `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${Object.entries(VARIANTS).map(([k, m]) => `<a href="${dirUrl(dir, path.join(vdir(k), slug))}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`).join('')}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
+  write(path.join(dir, 'index.html'), shell({
+    v, kind: key, cssKind: 'home', dir, title, desc, ld,
+    body: `<div id="topo-wrap">${html}</div>\n${nav}`,
+    data: { kind: 'home', units: ctxUnits.map((u) => ({ name: u.name, wa: u.wa, tel: u.tel })) },
+  }));
+}
+
 function buildChooser() {
   const blurb = {
     a: 'Ingressos picotados, azul royal e amarelo. O mais próximo da marca no Instagram: festa, energia e clima de família.',
@@ -401,8 +422,18 @@ const urls = [];
 for (const v of targets) {
   buildHome(v);
   buildAbout(v);
+  buildPage(v, 'aula-experimental', {
+    title: 'Agendar aula experimental · Super Treino Academia',
+    desc: 'Preencha o formulário e abrimos o WhatsApp da unidade escolhida (Itararé, Parque Jurema ou Renascença II) com a mensagem pronta.',
+    ld: jsonLd({ '@context': 'https://schema.org', '@type': 'WebPage', name: 'Agendar aula experimental' }),
+  });
+  buildPage(v, 'equipe', {
+    title: 'Equipe de instrutores · Super Treino Academia, Teresina',
+    desc: 'Conheça os instrutores de cada unidade da Super Treino Academia em Teresina.',
+    ld: jsonLd({ '@context': 'https://schema.org', '@type': 'WebPage', name: 'Equipe' }),
+  });
   urls.push(vdir(v) ? `${vdir(v)}/` : '');
-  urls.push(`${path.join(vdir(v), 'quem-somos')}/`);
+  urls.push(`${path.join(vdir(v), 'quem-somos')}/`, `${path.join(vdir(v), 'aula-experimental')}/`, `${path.join(vdir(v), 'equipe')}/`);
   for (const u of units) { buildUnit(v, u); urls.push(`${unitDir(v, u)}/`); }
 }
 if (FINAL) {

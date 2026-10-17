@@ -49,6 +49,33 @@
     $('[data-q-next]', root)?.addEventListener('click', () => go(cur + 1));
   });
 
+
+  /* ---------- Formulário de aula experimental: abre o WhatsApp da unidade ---------- */
+  $$('[data-wa-form]').forEach((form) => {
+    const status = $('.fm-status', form);
+    const say = (html) => { status.hidden = false; status.innerHTML = html; };
+    const mark = (el, bad) => { if (bad) el.setAttribute('aria-invalid', 'true'); else el.removeAttribute('aria-invalid'); };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = form.elements.nome;
+      const unidade = form.querySelector('input[name="unidade"]:checked');
+      const bad = [];
+      mark(nome, !nome.value.trim());
+      if (!nome.value.trim()) bad.push('o seu nome');
+      $$('.fm-pill input[name="unidade"]', form).forEach((r) => mark(r.nextElementSibling, !unidade));
+      if (!unidade) bad.push('a unidade');
+      if (bad.length) { say(`Falta informar ${bad.join(' e ')}.`); status.classList.add('fm-err'); (nome.value.trim() ? form.querySelector('input[name="unidade"]') : nome).focus(); return; }
+      status.classList.remove('fm-err');
+      const exp = form.querySelector('input[name="experiencia"]:checked');
+      const msg = `Olá! Meu nome é ${nome.value.trim()}. Quero agendar uma aula experimental na Super Treino ${unidade.value}. Quero treinar: ${form.elements.objetivo.value}. Melhor horário: ${form.elements.horario.value}.${exp ? ` Experiência: ${exp.value}.` : ''}`;
+      const num = (unidade.dataset.wa.match(/wa\.me\/(\d+)/) || [])[1];
+      const url = `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+      (window.dataLayer = window.dataLayer || []).push({ event: 'form_submit', form: 'aula_experimental', unit: unidade.value, page: location.pathname });
+      window.open(url, '_blank', 'noopener');
+      say(`Abrimos o WhatsApp da ${unidade.value}. Se não abriu, <a href="${url}" target="_blank" rel="noopener">toque aqui para enviar a mensagem</a>.`);
+    });
+  });
+
   /* ---------- Menu mobile ---------- */
   $$('details.nav-m').forEach((d) => {
     d.addEventListener('click', (e) => { if (e.target.closest('a')) d.open = false; });
