@@ -8,7 +8,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync } from 'node:fs';
 import { posix as path } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { brand, colors, units, plans, faq, dayLabels } from './src/data/site.mjs';
+import { brand, colors, units, plans, faq, dayLabels, about } from './src/data/site.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url).replace(/\\/g, '/'));
 const SRC = path.join(ROOT, 'src');
@@ -191,7 +191,7 @@ const polish = (html) => html
   .replace(/>4,7</g, '><em class="num" data-count="4.7" data-dec="1">4,7</em><')
   .replace('<main>', '<main id="conteudo">');
 
-function shell({ v, kind, dir, title, desc, ld, body, data }) {
+function shell({ v, kind, cssKind = kind, dir, title, desc, ld, body, data }) {
   const root = dirUrl(dir, '');
   const meta = VARIANTS[v];
   const robots = FINAL ? '' : '<meta name="robots" content="noindex,nofollow">\n';
@@ -216,7 +216,7 @@ ${robots}${canonical}<meta name="theme-color" content="${meta.theme}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${meta.fonts}">
-<link rel="stylesheet" href="${root}css/${v}-${kind}.css">
+<link rel="stylesheet" href="${root}css/${v}-${cssKind}.css">
 <link rel="stylesheet" href="${root}css/fx.css">
 <script>document.documentElement.classList.add('js')</script>
 ${ld}
@@ -309,6 +309,34 @@ function buildUnit(v, u) {
   }));
 }
 
+function buildAbout(v) {
+  const dir = path.join(vdir(v), 'quem-somos');
+  const root = dirUrl(dir, '');
+  const ctxUnits = units.map((u) => unitCtx(u, v, dir, root));
+  const scope = {
+    root, ...colors,
+    home: dirUrl(dir, vdir(v)),
+    units: ctxUnits,
+    about: { ...about, draft: ph(about.draft), mission: rich(about.mission), vision: rich(about.vision), history: rich(about.history), lead: esc(about.lead), proof: esc(about.proof), values: about.values.map((x, i) => ({ t: esc(x.t), d: esc(x.d), n: String(i + 1).padStart(2, '0') })) },
+    reviewsTotal: String(brand.reviews),
+  };
+  const html = polish(render(read(`tpl/${v}-about.html`), scope, `${v}-about`));
+  write(path.join(dir, 'index.html'), shell({
+    v, kind: 'about', cssKind: 'home', dir,
+    title: 'Quem somos · Super Treino Academia, Teresina',
+    desc: 'Conheça a Super Treino Academia: missão, visão e valores de uma academia de bairro com três unidades em Teresina e clima de família.',
+    ld: jsonLd({ '@context': 'https://schema.org', '@type': 'AboutPage', name: 'Quem somos', isPartOf: { '@type': 'Organization', name: brand.name } }),
+    body: `<div id="topo-wrap">${html}</div>\n${FINAL ? '' : protoNavAbout(v, dir)}`,
+    data: { kind: 'home', units: ctxUnits.map((u) => ({ name: u.name, wa: u.wa, tel: u.tel })) },
+  }));
+}
+
+function protoNavAbout(v, dir) {
+  const items = Object.entries(VARIANTS).map(([k, m]) =>
+    `<a href="${dirUrl(dir, path.join(vdir(k), 'quem-somos'))}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`).join('');
+  return `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
+}
+
 function buildChooser() {
   const blurb = {
     a: 'Ingressos picotados, azul royal e amarelo. O mais próximo da marca no Instagram: festa, energia e clima de família.',
@@ -372,7 +400,9 @@ const targets = FINAL ? [FINAL] : Object.keys(VARIANTS);
 const urls = [];
 for (const v of targets) {
   buildHome(v);
+  buildAbout(v);
   urls.push(vdir(v) ? `${vdir(v)}/` : '');
+  urls.push(`${path.join(vdir(v), 'quem-somos')}/`);
   for (const u of units) { buildUnit(v, u); urls.push(`${unitDir(v, u)}/`); }
 }
 if (FINAL) {

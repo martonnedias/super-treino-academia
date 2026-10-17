@@ -118,3 +118,21 @@ export const faq = [
 ];
 
 export const dayLabels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+// Quem somos. Missão, visão e valores são uma PROPOSTA escrita a partir do que está no PRD
+// (clima de família, preço justo, dança, atenção ao aluno). Validar com o proprietário.
+export const about = {
+  lead: 'Somos uma academia de bairro com três unidades em Teresina. Aqui treinar é simples: espaço de sobra, preço à vista e gente que recebe você pelo nome.',
+  draft: 'rascunho: missão, visão e valores a validar com o proprietário',
+  mission: 'Tornar o treino acessível e acolhedor para quem vive em Teresina, com preço justo, atenção de verdade e um ambiente onde todo mundo se sente em casa.',
+  vision: 'Ser a academia da família em Teresina: a que cada bairro escolhe para começar a treinar e continua por muitos anos. [meta de crescimento a definir]',
+  values: [
+    { t: 'Acolhimento', d: 'Quem chega pela primeira vez é recebido com atenção. Nas avaliações, os alunos dizem “me sinto em casa”.' },
+    { t: 'Preço justo', d: 'Planos e valores à vista, do mensal ao semestral, sem pegadinha.' },
+    { t: 'Energia & diversão', d: 'Treinar não precisa ser pesado: aulas de dança com música alta, turma animada e confete.' },
+    { t: 'Atenção ao aluno', d: 'Instrutores que acompanham do iniciante ao avançado.' },
+    { t: 'Estrutura de sobra', d: 'Salas amplas e aparelhos para treinar o corpo todo.' },
+  ],
+  proof: 'São 283 avaliações no Google, com notas entre 4,6 e 4,7, e 22,4 mil pessoas que acompanham a academia no Instagram.',
+  history: '[história da academia: ano de fundação, nome do proprietário e como tudo começou]',
+};

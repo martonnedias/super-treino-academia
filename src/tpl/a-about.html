@@ -1,0 +1,140 @@
+<div class="st" id="topo" style="--blue:{{blue}};--yellow:{{yellow}};--ink:{{ink}};--orange:{{orange}}">
+
+<!-- ============ CABEÇALHO ============ -->
+<header style="background:var(--blue);color:#fff;position:sticky;top:0;z-index:40">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px;position:relative">
+    <a href="{{home}}" aria-label="Super Treino Academia, início" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+      <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+      <span style="display:flex;flex-direction:column;line-height:1"><span class="dsp" style="font-size:28px;font-style:italic">Super Treino</span><span class="dsp" style="font-size:12px;letter-spacing:.5em;color:#fff;margin-top:3px;font-weight:700">Academia</span></span>
+    </a>
+    <nav class="nav-d" aria-label="Principal" style="display:flex;gap:30px;align-items:center">
+      <a class="nav-link" href="{{home}}#unidades">Unidades</a>
+      <a class="nav-link" href="{{home}}#planos">Planos</a>
+      <a class="nav-link" href="{{home}}#aulas">Aulas</a>
+      <a class="nav-link" href="{{home}}#depoimentos">Depoimentos</a>
+      <a class="nav-link" href="{{home}}quem-somos/">Quem somos</a><a class="nav-link" href="{{home}}#duvidas">Dúvidas</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a class="btn btn-y btn-sm hide-m" href="{{home}}#topo-ingresso">Aula experimental</a>
+      <details class="nav-m">
+        <summary aria-label="Abrir menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <div style="position:absolute;left:0;right:0;top:100%;background:var(--ink);padding:12px 24px 28px;display:grid;gap:2px;box-shadow:0 24px 30px rgba(0,0,0,.35)">
+          <a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}#unidades">Unidades</a>
+          <a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}#planos">Planos</a>
+          <a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}#aulas">Aulas</a>
+          <a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}#depoimentos">Depoimentos</a>
+          <a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}quem-somos/">Quem somos</a><a class="nav-link" style="font-size:30px;padding:12px 0" href="{{home}}#duvidas">Dúvidas</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="grain" style="background:var(--blue);color:#fff;padding:clamp(40px,6cqw,80px) 0 clamp(72px,9cqw,120px);overflow:hidden">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:48px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+      <h1 class="dsp h1" style="font-size:clamp(64px,14cqw,128px)">Quem<br><span style="color:var(--yellow);font-style:italic">somos.</span></h1>
+      <p style="font-size:20px;max-width:30em;color:#E6ECFF">{{about.lead}}</p>
+      <p style="font-size:16px;color:#DCE5FF;max-width:34em">{{about.proof}}</p>
+    </div>
+    <div style="position:relative">
+      <div class="print" style="transform:rotate(2deg)">
+        <div class="frame" style="aspect-ratio:4/5;border-radius:2px"><img class="img" src="{{root}}img/turma-comemorando.jpg" alt="Alunos de várias idades batendo as mãos e rindo depois do treino" style="object-position:55% 30%"></div>
+        <p class="serial" style="position:absolute;left:16px;bottom:14px;color:var(--ink)">Super Treino · Teresina</p>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:-18px;bottom:-18px;width:52%;height:26%;background:var(--yellow);border-radius:18px;z-index:-1;transform:rotate(-4deg)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-light" style="background:#fff">
+  <div class="wrap">
+    <p style="margin-bottom:28px;font-size:15px">{{about.draft}}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:48px 64px">
+      <div class="drow" style="grid-template-columns:1fr"><h2 class="dsp h2" style="color:var(--blue)">Missão</h2><p style="font-size:20px;color:var(--slate);max-width:26em">{{about.mission}}</p></div>
+      <div class="drow" style="grid-template-columns:1fr"><h2 class="dsp h2" style="color:var(--blue)">Visão</h2><p style="font-size:20px;color:var(--slate);max-width:26em">{{about.vision}}</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-light" style="background:var(--mist)">
+  <div class="wrap">
+    <h2 class="dsp h2" style="color:var(--blue);margin-bottom:28px">Nossos valores</h2>
+    <div style="border-bottom:2px solid var(--ink)">
+      <sc-for list="{{about.values}}" as="v">
+        <div class="drow"><h3 class="dsp">{{v.t}}</h3><p style="color:var(--slate)">{{v.d}}</p></div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--ink);color:#fff">
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:40px 64px;align-items:center">
+    <div class="frame" style="aspect-ratio:16/10;border-radius:22px"><img class="img" src="{{root}}img/danca-confete.jpg" alt="Turma da aula de dança rindo, com confete caindo" loading="lazy"></div>
+    <div style="display:grid;gap:18px;justify-items:start">
+      <h2 class="dsp h2" style="font-size:clamp(48px,9cqw,80px)"><span style="color:var(--yellow)">Nossa</span> história</h2>
+      <p style="font-size:18px;color:#E9EBF3;max-width:30em">{{about.history}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--blue);color:#fff;padding-bottom:clamp(72px,9cqw,120px)">
+  <div class="wrap">
+    <div class="tkw" style="max-width:920px;margin:0 auto">
+      <div class="tk-t" style="padding:36px clamp(24px,5cqw,48px) 32px"><h2 class="dsp h2">Vem conhecer!</h2></div>
+      <div class="tk-b" style="padding:32px clamp(24px,5cqw,48px) 36px;display:grid;gap:18px">
+        <p style="font-weight:700;font-size:18px">Escolha a unidade e agende sua aula experimental.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px">
+          <sc-for list="{{units}}" as="u"><a class="btn btn-k" href="{{u.wa}}" target="_blank" rel="noopener" style="min-height:64px;font-size:26px">{{u.name}}</a></sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer style="background:var(--ink);color:#D9DDEB">
+  <div class="wrap" style="padding-top:64px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:40px">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <a href="{{home}}" aria-label="Super Treino Academia, início" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--yellow)">
+        <svg viewBox="0 0 40 24" width="44" height="27" aria-hidden="true"><g fill="currentColor"><rect x="1" y="7" width="5" height="10" rx="1.5"/><rect x="7" y="3" width="6" height="18" rx="2"/><rect x="14" y="10.5" width="12" height="3"/><rect x="27" y="3" width="6" height="18" rx="2"/><rect x="34" y="7" width="5" height="10" rx="1.5"/></g></svg>
+        <span style="display:flex;flex-direction:column;line-height:1"><span class="dsp" style="font-size:28px;font-style:italic">Super Treino</span><span class="dsp" style="font-size:12px;letter-spacing:.5em;color:#fff;margin-top:3px;font-weight:700">Academia</span></span>
+      </a>
+      <p style="font-size:15px">Treino com preço justo e clima de família, em Teresina-PI.</p>
+      <a href="https://www.instagram.com/supertreinoacademia/" target="_blank" rel="noopener" style="font-weight:800;color:#fff">Instagram @supertreinoacademia</a>
+    </div>
+    <div>
+      <p class="dsp" style="color:var(--yellow);font-size:22px;margin-bottom:14px">Unidades</p>
+      <ul style="list-style:none;padding:0;display:grid;gap:12px;font-size:15px">
+        <li><b style="color:#fff">Itararé</b><br>{{units.0.addr}}</li>
+        <li><b style="color:#fff">Parque Jurema</b><br>{{units.1.addr}}</li>
+        <li><b style="color:#fff">Renascença II</b><br>{{units.2.addr}}</li>
+      </ul>
+    </div>
+    <div>
+      <p class="dsp" style="color:var(--yellow);font-size:22px;margin-bottom:14px">Navegue</p>
+      <ul style="list-style:none;padding:0;display:grid;gap:2px;font-size:16px">
+        <li><a href="{{home}}#unidades" style="display:inline-block;padding:8px 0">Unidades</a></li>
+        <li><a href="{{home}}#planos" style="display:inline-block;padding:8px 0">Planos</a></li>
+        <li><a href="{{home}}#aulas" style="display:inline-block;padding:8px 0">Aulas de dança</a></li>
+        <li><a href="{{home}}quem-somos/" style="display:inline-block;padding:8px 0">Quem somos</a></li><li><a href="{{home}}#duvidas" style="display:inline-block;padding:8px 0">Dúvidas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.16)">
+    <div class="wrap" style="padding-top:20px;padding-bottom:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between">
+      <span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span>
+      <span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais da academia</span>
+      <span>Teresina · Piauí</span>
+    </div>
+  </div>
+</footer>
+
+<!-- barra fixa no celular -->
+<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.3)">
+  <a class="btn btn-y" href="{{home}}#topo-ingresso" style="flex:1;min-height:54px">Agendar aula experimental</a>
+</div>
+
+</div>
