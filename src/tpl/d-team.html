@@ -32,7 +32,7 @@
 <main>
 <section style="padding:clamp(130px,14cqw,180px) 0 clamp(56px,7cqw,96px)">
   <div class="wrap" style="display:grid;gap:20px;justify-items:start">
-    <h1 class="tk" style="font-size:clamp(84px,15cqw,160px);line-height:.84">Nossa <span class="y">equipe</span></h1>
+    <h1 class="tk" style="font-size:clamp(60px,10.5cqw,112px);line-height:.84">Nossa <span class="y">equipe</span></h1>
     <p style="font-size:18px;max-width:30em;color:#D7D9E2">Instrutores que acompanham do iniciante ao avançado. <span class="ph">[nomes, funções e registros profissionais a confirmar com cada unidade]</span></p>
   </div>
 </section>
@@ -57,7 +57,7 @@
   <div class="wrap" style="padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:36px">
     <div style="display:grid;gap:12px;align-content:start;font-size:15px">
       <p class="tk y" style="font-size:30px">Contato</p>
-      <sc-for list="{{units}}" as="u"><p>WhatsApp <b style="color:#fff">{{u.name}}</b> · <a href="{{u.wa}}" target="_blank" rel="noopener">{{u.phone}}</a></p></sc-for>
+      <sc-for list="{{units}}" as="u"><p>WhatsApp <b style="color:#fff">{{u.name}}</b> · <a href="{{u.wa}}" target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">{{u.phone}}</a></p></sc-for>
       <p>Instagram @supertreinoacademia</p>
     </div>
     <div style="display:grid;gap:10px;align-content:start;font-size:15px">
@@ -74,8 +74,8 @@
   <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:18px;padding-bottom:18px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span><span>Teresina · Piauí</span></div></div>
 </footer>
 
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
   <a class="btn btn-y" href="{{home}}#unidades" style="flex:1">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>

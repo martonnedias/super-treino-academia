@@ -35,7 +35,7 @@
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to right,#050507 15%,rgba(5,5,7,.72) 48%,rgba(5,5,7,.1) 85%)"></div>
   <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,#050507 4%,rgba(5,5,7,0) 45%)"></div>
   <div class="wrap rise" style="position:relative;padding-top:clamp(150px,16cqw,200px);padding-bottom:clamp(56px,7cqw,88px);display:grid;gap:24px;justify-items:start">
-    <h1 class="tk" style="font-size:clamp(84px,17cqw,168px);line-height:.84">Quem <span class="y">somos</span></h1>
+    <h1 class="tk" style="font-size:clamp(60px,11cqw,120px);line-height:.84">Quem <span class="y">somos</span></h1>
     <p style="max-width:30em;color:#D7D9E2;font-size:18px">{{about.lead}}</p>
     <p style="max-width:34em;color:var(--mute);font-size:15px">{{about.proof}}</p>
   </div>
@@ -72,7 +72,7 @@
 <section style="background:#050507;padding:clamp(72px,10cqw,120px) 0">
   <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:28px 64px;align-items:end;border-top:1px solid var(--line);padding-top:clamp(48px,6cqw,72px)">
     <h2 class="tk" style="font-size:clamp(64px,11cqw,112px);line-height:.85">Vem <span class="y">conhecer.</span></h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:10px"><sc-for list="{{units}}" as="u"><a class="btn btn-y" href="{{u.wa}}" target="_blank" rel="noopener">{{u.name}}</a></sc-for></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:10px"><sc-for list="{{units}}" as="u"><a class="btn btn-y" href="{{u.wa}}" target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">{{u.name}}</a></sc-for></div>
   </div>
 </section>
 </main>
@@ -81,7 +81,7 @@
   <div class="wrap" style="padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:36px">
     <div style="display:grid;gap:12px;align-content:start;font-size:15px">
       <p class="tk y" style="font-size:30px">Contato</p>
-      <sc-for list="{{units}}" as="u"><p>WhatsApp <b style="color:#fff">{{u.name}}</b> · <a href="{{u.wa}}" target="_blank" rel="noopener">{{u.phone}}</a></p></sc-for>
+      <sc-for list="{{units}}" as="u"><p>WhatsApp <b style="color:#fff">{{u.name}}</b> · <a href="{{u.wa}}" target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">{{u.phone}}</a></p></sc-for>
       <p>Instagram @supertreinoacademia</p>
     </div>
     <div style="display:grid;gap:10px;align-content:start;font-size:15px">
@@ -98,8 +98,8 @@
   <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:18px;padding-bottom:18px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span><span>Teresina · Piauí</span></div></div>
 </footer>
 
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
   <a class="btn btn-y" href="{{home}}#unidades" style="flex:1">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>

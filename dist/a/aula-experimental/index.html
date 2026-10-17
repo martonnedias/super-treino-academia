@@ -78,9 +78,9 @@
   <div class="fm-row"><label for="f-hor">Melhor horário</label>
     <select id="f-hor" name="horario"><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
   <button class="btn btn-k" type="submit" style="min-height:60px;justify-self:start">Enviar pelo WhatsApp</button>
-  <p class="fm-status" role="status" aria-live="polite" hidden></p>
+  <p class="fm-status" id="fm-status" role="status" aria-live="polite" hidden></p>
   <p class="fm-note">Ao enviar, abrimos o WhatsApp da unidade com a mensagem pronta. Nada fica guardado neste site. A equipe confirma dia e horário com você.</p>
-  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9.">Itararé</a> <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema.">Parque Jurema</a> <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II.">Renascença II</a> </p></noscript>
+  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9." aria-label="Agendar aula experimental na unidade Itararé pelo WhatsApp">Itararé</a> <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema." aria-label="Agendar aula experimental na unidade Parque Jurema pelo WhatsApp">Parque Jurema</a> <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II." aria-label="Agendar aula experimental na unidade Renascença II pelo WhatsApp">Renascença II</a> </p></noscript>
 </form></div>
     </div>
   </div>
@@ -126,13 +126,13 @@
 </footer>
 
 <!-- barra fixa no celular -->
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.3)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.3)">
   <a class="btn btn-y" href="../#topo-ingresso" style="flex:1;min-height:54px">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>
 </div>
-<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>A</b></summary><nav aria-label="Layouts do protótipo"><a href="./" aria-current="page" title="Opção A · Ingresso de festa">A</a><a href="../../c/aula-experimental/" title="Opção C · Noite">C</a><a href="../../d/aula-experimental/" title="Opção D · Contraste">D</a><a class="proto-all" href="../../">Comparar</a></nav></details>
+<aside aria-label="Protótipo"><details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>A</b></summary><nav aria-label="Layouts do protótipo"><a href="./" aria-current="page" title="Opção A · Ingresso de festa">A</a><a href="../../c/aula-experimental/" title="Opção C · Noite">C</a><a href="../../d/aula-experimental/" title="Opção D · Contraste">D</a><a class="proto-all" href="../../">Comparar</a></nav></details></aside>
 <script type="application/json" id="st-data">{"kind":"home","units":[{"name":"Itararé","wa":"https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9.","tel":"tel:+5586988136841"},{"name":"Parque Jurema","wa":"https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema.","tel":"tel:+5588994427681"},{"name":"Renascença II","wa":"https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II.","tel":"tel:+5586994427681"}]}</script>
 <script src="../../js/fx.js" defer></script>
 </body>

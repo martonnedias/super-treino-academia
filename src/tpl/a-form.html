@@ -51,9 +51,9 @@
   <div class="fm-row"><label for="f-hor">Melhor horário</label>
     <select id="f-hor" name="horario"><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
   <button class="btn btn-k" type="submit" style="min-height:60px;justify-self:start">Enviar pelo WhatsApp</button>
-  <p class="fm-status" role="status" aria-live="polite" hidden></p>
+  <p class="fm-status" id="fm-status" role="status" aria-live="polite" hidden></p>
   <p class="fm-note">Ao enviar, abrimos o WhatsApp da unidade com a mensagem pronta. Nada fica guardado neste site. A equipe confirma dia e horário com você.</p>
-  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <sc-for list="{{units}}" as="u"><a href="{{u.wa}}">{{u.name}}</a> </sc-for></p></noscript>
+  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <sc-for list="{{units}}" as="u"><a href="{{u.wa}}" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">{{u.name}}</a> </sc-for></p></noscript>
 </form></div>
     </div>
   </div>
@@ -99,8 +99,8 @@
 </footer>
 
 <!-- barra fixa no celular -->
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.3)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;box-shadow:0 -8px 24px rgba(0,0,0,.3)">
   <a class="btn btn-y" href="{{home}}#topo-ingresso" style="flex:1;min-height:54px">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>

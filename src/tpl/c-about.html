@@ -34,7 +34,7 @@
     <div style="position:absolute;inset:0;overflow:hidden"><img class="img kb" src="{{root}}img/turma-comemorando.jpg" alt="Alunos de várias idades batendo as mãos e rindo depois do treino" style="object-position:60% 30%"></div>
     <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,15,.97) 6%,rgba(11,11,15,.62) 50%,rgba(11,11,15,.2) 100%)"></div>
     <div class="wrap rise" style="position:relative;width:100%;padding-top:72px;padding-bottom:48px;display:grid;gap:22px">
-      <h1 class="ax" style="font-size:clamp(72px,16cqw,160px);line-height:.88">Quem <span style="color:var(--yellow);font-style:italic">somos</span></h1>
+      <h1 class="ax" style="font-size:clamp(56px,11cqw,112px);line-height:.88">Quem <span style="color:var(--yellow);font-style:italic">somos</span></h1>
       <p style="font-size:20px;max-width:30em;color:#E6E9F5">{{about.lead}}</p>
     </div>
   </div>
@@ -72,7 +72,7 @@
 <section style="background:var(--yellow);color:var(--ink);padding:clamp(72px,10cqw,128px) 0">
   <div class="wrap" style="display:grid;gap:40px;justify-items:start">
     <h2 class="ax" style="font-size:clamp(64px,16cqw,104px)">Vem<br>conhecer.</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:12px"><sc-for list="{{units}}" as="u"><a class="btn btn-k" href="{{u.wa}}" target="_blank" rel="noopener" style="min-height:62px">{{u.name}}</a></sc-for></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px"><sc-for list="{{units}}" as="u"><a class="btn btn-k" href="{{u.wa}}" target="_blank" rel="noopener" style="min-height:62px" aria-label="Agendar aula experimental na unidade {{u.name}} pelo WhatsApp">{{u.name}}</a></sc-for></div>
   </div>
 </section>
 </main>
@@ -101,8 +101,8 @@
   <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:20px;padding-bottom:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais da academia</span><span>Teresina · Piauí</span></div></div>
 </footer>
 
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;border-top:1px solid var(--line)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:var(--ink);padding:10px 16px;border-top:1px solid var(--line)">
   <a class="btn btn-y" href="{{home}}#escolha" style="flex:1;min-height:54px">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>

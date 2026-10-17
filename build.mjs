@@ -237,7 +237,7 @@ function protoNav(v, kind, unit, dir) {
     const to = kind === 'home' ? vdir(k) : unitDir(k, unit);
     return `<a href="${dirUrl(dir, to)}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`;
   }).join('');
-  return `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
+  return `<aside aria-label="Protótipo"><details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details></aside>`;
 }
 
 function buildHome(v) {
@@ -334,7 +334,7 @@ function buildAbout(v) {
 function protoNavAbout(v, dir) {
   const items = Object.entries(VARIANTS).map(([k, m]) =>
     `<a href="${dirUrl(dir, path.join(vdir(k), 'quem-somos'))}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`).join('');
-  return `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
+  return `<aside aria-label="Protótipo"><details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${items}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details></aside>`;
 }
 
 // Páginas extras (formulário e equipe) com o mesmo cabeçalho/rodapé da home de cada layout.
@@ -350,7 +350,7 @@ function buildPage(v, slug, { title, desc, ld }) {
   };
   const key = slug === 'aula-experimental' ? 'form' : 'team';
   const html = polish(render(read(`tpl/${v}-${key}.html`), scope, `${v}-${key}`));
-  const nav = FINAL ? '' : `<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${Object.entries(VARIANTS).map(([k, m]) => `<a href="${dirUrl(dir, path.join(vdir(k), slug))}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`).join('')}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details>`;
+  const nav = FINAL ? '' : `<aside aria-label="Protótipo"><details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>${v.toUpperCase()}</b></summary><nav aria-label="Layouts do protótipo">${Object.entries(VARIANTS).map(([k, m]) => `<a href="${dirUrl(dir, path.join(vdir(k), slug))}"${k === v ? ' aria-current="page"' : ''} title="${m.label} · ${m.nome}">${k.toUpperCase()}</a>`).join('')}<a class="proto-all" href="${dirUrl(dir, '')}">Comparar</a></nav></details></aside>`;
   write(path.join(dir, 'index.html'), shell({
     v, kind: key, cssKind: 'home', dir, title, desc, ld,
     body: `<div id="topo-wrap">${html}</div>\n${nav}`,

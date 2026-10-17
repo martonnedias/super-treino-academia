@@ -76,6 +76,45 @@
     });
   });
 
+
+  /* ---------- Acessibilidade extra ---------- */
+  // Rolagem horizontal alcançável pelo teclado
+  $$('.rail').forEach((r) => {
+    const h = r.closest('section') && $('h2', r.closest('section'));
+    r.setAttribute('tabindex', '0');
+    r.setAttribute('role', 'region');
+    r.setAttribute('aria-label', `${h ? h.textContent.replace(/\s+/g, ' ').trim() + ': ' : ''}role para o lado para ver mais`);
+  });
+  // Links que abrem em nova aba avisam leitores de tela
+  $$('a[target="_blank"]').forEach((a) => {
+    const note = ' (abre em nova aba)';
+    const al = a.getAttribute('aria-label');
+    if (al) a.setAttribute('aria-label', al + note);
+    else { const s = document.createElement('span'); s.className = 'sr-only'; s.textContent = note; a.appendChild(s); }
+  });
+  // Carrossel de depoimentos anuncia a troca
+  $$('[data-q-pos]').forEach((p) => { p.setAttribute('role', 'status'); p.setAttribute('aria-live', 'polite'); });
+  // Campo com erro aponta para a mensagem
+  $$('[data-wa-form] input[name="nome"]').forEach((n) => n.setAttribute('aria-describedby', 'fm-status'));
+  // Letreiro em movimento precisa de controle para pausar (WCAG 2.2.2)
+  if (!reduce) {
+    $$('.mq').forEach((mq) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mq-pause';
+      b.setAttribute('aria-pressed', 'false');
+      b.innerHTML = '<span class="sr-only">Pausar animação do letreiro</span><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" fill="currentColor" d="M7 5h4v14H7zM13 5h4v14h-4z"/><path class="ic-play" fill="currentColor" d="M8 5v14l11-7z" style="display:none"/></svg>';
+      b.addEventListener('click', () => {
+        const on = mq.classList.toggle('paused');
+        b.setAttribute('aria-pressed', String(on));
+        $('.sr-only', b).textContent = on ? 'Retomar animação do letreiro' : 'Pausar animação do letreiro';
+        $('.ic-pause', b).style.display = on ? 'none' : '';
+        $('.ic-play', b).style.display = on ? '' : 'none';
+      });
+      mq.appendChild(b);
+    });
+  }
+
   /* ---------- Menu mobile ---------- */
   $$('details.nav-m').forEach((d) => {
     d.addEventListener('click', (e) => { if (e.target.closest('a')) d.open = false; });
@@ -99,8 +138,9 @@
 
   /* ---------- Botão flutuante de WhatsApp (desktop) ---------- */
   const waIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-4.7A8.5 8.5 0 1 1 8 19.6L3 21z"/></svg>';
-  const fab = document.createElement('div');
+  const fab = document.createElement('aside');
   fab.className = 'wa-fab';
+  fab.setAttribute('aria-label', 'Agendar pelo WhatsApp');
   if (page.kind === 'unit' && page.unit) {
     fab.innerHTML = `<a class="wa-btn" href="${page.unit.wa}" target="_blank" rel="noopener">${waIcon}<span>Agendar na ${page.unit.name}</span></a>`;
   } else if (page.units) {

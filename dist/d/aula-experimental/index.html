@@ -76,9 +76,9 @@
   <div class="fm-row"><label for="f-hor">Melhor horário</label>
     <select id="f-hor" name="horario"><option>Manhã</option><option>Tarde</option><option>Noite</option></select></div>
   <button class="btn btn-y" type="submit" style="min-height:60px;justify-self:start">Enviar pelo WhatsApp</button>
-  <p class="fm-status" role="status" aria-live="polite" hidden></p>
+  <p class="fm-status" id="fm-status" role="status" aria-live="polite" hidden></p>
   <p class="fm-note">Ao enviar, abrimos o WhatsApp da unidade com a mensagem pronta. Nada fica guardado neste site. A equipe confirma dia e horário com você.</p>
-  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9.">Itararé</a> <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema.">Parque Jurema</a> <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II.">Renascença II</a> </p></noscript>
+  <noscript><p class="fm-note">Sem JavaScript? Fale direto com a unidade: <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9." aria-label="Agendar aula experimental na unidade Itararé pelo WhatsApp">Itararé</a> <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema." aria-label="Agendar aula experimental na unidade Parque Jurema pelo WhatsApp">Parque Jurema</a> <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II." aria-label="Agendar aula experimental na unidade Renascença II pelo WhatsApp">Renascença II</a> </p></noscript>
 </form></div>
   </div>
 </section>
@@ -88,7 +88,7 @@
   <div class="wrap" style="padding-top:56px;padding-bottom:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:36px">
     <div style="display:grid;gap:12px;align-content:start;font-size:15px">
       <p class="tk y" style="font-size:30px">Contato</p>
-      <p>WhatsApp <b style="color:#fff">Itararé</b> · <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9." target="_blank" rel="noopener">(86) 98813-6841</a></p><p>WhatsApp <b style="color:#fff">Parque Jurema</b> · <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema." target="_blank" rel="noopener">(88) 99442-7681</a></p><p>WhatsApp <b style="color:#fff">Renascença II</b> · <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II." target="_blank" rel="noopener">(86) 99442-7681</a></p>
+      <p>WhatsApp <b style="color:#fff">Itararé</b> · <a href="https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9." target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade Itararé pelo WhatsApp">(86) 98813-6841</a></p><p>WhatsApp <b style="color:#fff">Parque Jurema</b> · <a href="https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema." target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade Parque Jurema pelo WhatsApp">(88) 99442-7681</a></p><p>WhatsApp <b style="color:#fff">Renascença II</b> · <a href="https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II." target="_blank" rel="noopener" aria-label="Agendar aula experimental na unidade Renascença II pelo WhatsApp">(86) 99442-7681</a></p>
       <p>Instagram @supertreinoacademia</p>
     </div>
     <div style="display:grid;gap:10px;align-content:start;font-size:15px">
@@ -105,13 +105,13 @@
   <div style="border-top:1px solid var(--line)"><div class="wrap" style="padding-top:18px;padding-bottom:18px;font-size:13px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between"><span>© 2026 Super Treino Academia · CNPJ <span class="ph" style="color:#fff">[00.000.000/0000-00]</span></span><span class="ph" style="color:#fff">Fotos provisórias geradas por IA: trocar pelas fotos reais</span><span>Teresina · Piauí</span></div></div>
 </footer>
 
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 16px;border-top:1px solid var(--line)">
   <a class="btn btn-y" href="../#unidades" style="flex:1">Agendar aula experimental</a>
-</div>
+</nav>
 
 </div>
 </div>
-<details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>D</b></summary><nav aria-label="Layouts do protótipo"><a href="../../a/aula-experimental/" title="Opção A · Ingresso de festa">A</a><a href="../../c/aula-experimental/" title="Opção C · Noite">C</a><a href="./" aria-current="page" title="Opção D · Contraste">D</a><a class="proto-all" href="../../">Comparar</a></nav></details>
+<aside aria-label="Protótipo"><details class="proto"><summary aria-label="Trocar de layout do protótipo">Layout <b>D</b></summary><nav aria-label="Layouts do protótipo"><a href="../../a/aula-experimental/" title="Opção A · Ingresso de festa">A</a><a href="../../c/aula-experimental/" title="Opção C · Noite">C</a><a href="./" aria-current="page" title="Opção D · Contraste">D</a><a class="proto-all" href="../../">Comparar</a></nav></details></aside>
 <script type="application/json" id="st-data">{"kind":"home","units":[{"name":"Itararé","wa":"https://wa.me/5586988136841?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Itarar%C3%A9.","tel":"tel:+5586988136841"},{"name":"Parque Jurema","wa":"https://wa.me/5588994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Parque%20Jurema.","tel":"tel:+5588994427681"},{"name":"Renascença II","wa":"https://wa.me/5586994427681?text=Ol%C3%A1!%20Quero%20agendar%20uma%20aula%20experimental%20na%20Super%20Treino%20Renascen%C3%A7a%20II.","tel":"tel:+5586994427681"}]}</script>
 <script src="../../js/fx.js" defer></script>
 </body>

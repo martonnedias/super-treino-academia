@@ -56,7 +56,7 @@ Depois de editar, rode `npm run build`. Textos entre colchetes (`[assim]`) apare
 - Mobile first, sem rolagem horizontal de 320 a 1440 px; barra fixa de agendamento no celular e botão flutuante de WhatsApp no computador.
 - Eventos de conversão `contact_click` (WhatsApp, ligar, rota) enviados ao `dataLayer`, prontos para GA4/GTM por unidade. Nenhum cookie é criado hoje; ao instalar analytics, adicione aviso de cookies e página de privacidade (LGPD).
 - SEO local: título e descrição próprios por unidade, dados estruturados `HealthClub` com o mesmo nome, endereço e telefone do Google Meu Negócio.
-- Acessibilidade: link "pular para o conteúdo", foco visível, botões de 44 px, `prefers-reduced-motion` desliga os efeitos de movimento.
+- Acessibilidade (WCAG 2.1/2.2 AA, auditada com axe-core: 0 violações no computador e no celular): link "pular para o conteúdo", marcos de página, foco visível em tudo que recebe Tab, alvos de toque de 44 px, botões com nome completo (unidade ou plano) e aviso de "abre em nova aba", letreiro com botão de pausa, rolagem horizontal alcançável pelo teclado, formulário com erro anunciado, sem rolagem lateral até 320 px, e `prefers-reduced-motion` desliga os efeitos de movimento.
 - Cabeçalhos de segurança e cache em `vercel.json`.
 
 ## Publicar

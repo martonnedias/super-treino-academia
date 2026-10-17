@@ -40,7 +40,7 @@
       <a href="{{home}}#unidades" style="padding:8px 0">Unidades</a><span aria-hidden="true" style="padding:8px 0">/</span>
       <span class="y" style="padding:8px 0">{{unit.name}}</span>
     </nav>
-    <h1 class="tk" style="max-width:100%;overflow-wrap:anywhere"><span style="display:block;font-size:clamp(40px,6cqw,60px)">Super Treino</span><span class="y" style="display:block;font-size:clamp(52px,16cqw,160px);line-height:.84">{{unit.name}}</span></h1>
+    <h1 class="tk" style="max-width:100%;overflow-wrap:anywhere"><span style="display:block;font-size:clamp(40px,6cqw,60px)">Super Treino</span><span class="y" style="display:block;font-size:clamp(52px,10cqw,120px);line-height:.84">{{unit.name}}</span></h1>
     <p style="color:#D7D9E2;font-size:17px">{{unit.addr}}</p>
     <div style="display:flex;flex-wrap:wrap;gap:12px">
       <a class="btn btn-y" href="{{unit.wa}}" target="_blank" rel="noopener">Agendar aula experimental <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
@@ -127,7 +127,7 @@
             <h3 class="tk" style="font-size:34px">{{p.name}} <sc-if value="{{p.hasBadge}}"><span style="display:inline-block;vertical-align:middle;margin-left:8px;background:var(--yellow);color:#050507;font-family:Manrope,sans-serif;font-size:11px;font-weight:800;letter-spacing:.1em;padding:5px 10px;border-radius:999px">Melhor preço</span></sc-if></h3>
             <p style="color:var(--mute)">{{p.parcel}} · equivale a {{p.month}} por mês · {{p.eco}}</p>
           </div>
-          <a class="btn {{p.btnD}} btn-sm" href="{{p.wa}}" target="_blank" rel="noopener">Quero este</a>
+          <a class="btn {{p.btnD}} btn-sm" aria-label="Quero o plano {{p.name}}" href="{{p.wa}}" target="_blank" rel="noopener">Quero este</a>
         </div>
       </sc-for>
     </div>
@@ -182,10 +182,10 @@
   </div>
 </footer>
 
-<div class="bar-m" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 12px;gap:8px;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--line)">
+<nav class="bar-m" aria-label="Ações rápidas" style="position:sticky;bottom:0;z-index:40;background:#050507;padding:10px 12px;gap:8px;grid-template-columns:2fr 1fr 1fr;border-top:1px solid var(--line)">
   <a class="btn btn-y btn-sm" href="{{unit.wa}}" target="_blank" rel="noopener" style="padding:0 8px">Agendar</a>
   <a class="btn btn-o btn-sm" href="{{unit.map}}" target="_blank" rel="noopener" style="padding:0 8px">Mapa</a>
   <a class="btn btn-o btn-sm" href="{{unit.tel}}" style="padding:0 8px">Ligar</a>
-</div>
+</nav>
 
 </div>
